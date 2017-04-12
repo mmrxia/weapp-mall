@@ -24,6 +24,6 @@
 | `app.wxss`   | 小程序公共样式表                            |
                                                
 #### 三、其他
-1. 微信开发者工具下载：[地址](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)   
-2. 小程序开发参考文档：[地址](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html)
-3. 项目工程Git路径：[地址](git@github.com:mmrxia/weapp-mall.git)   
+1. 微信开发者工具下载：[https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)   
+2. 小程序开发参考文档：[https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html)
+3. 项目工程Git路径：[git@github.com:mmrxia/weapp-mall.git](git@github.com:mmrxia/weapp-mall.git)   
