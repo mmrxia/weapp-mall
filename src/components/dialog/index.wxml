@@ -1,0 +1,12 @@
+<template name="dialog">
+    <view class="dialog {{ showDialog ? 'dialog_show' : '' }}">
+        <view class="dialog__mask" bindtap="closeDialog" />
+        <view class="dialog__container">
+            <view wx:if="{{title}}" class="dialog__hd">{{title}}</view>
+            <view class="dialog__bd">{{content}}</view>
+            <view class="dialog__ft">
+                <button class="u-btn success" bindtap="closeDialog">关闭</button>
+            </view>
+        </view>
+    </view>
+</template>

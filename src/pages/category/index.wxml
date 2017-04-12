@@ -1,0 +1,35 @@
+<view class="section">
+    <!-- 左侧类型 -->
+    <scroll-view scroll-y="true" class="left">
+        <view wx:for="{{types}}" wx:key="typeId" data-type-id="{{item.typeId}}" bindtap="tapType" class="{{item.typeId == currType ? 'active' : ''}}">
+            {{item.name}}
+        </view>
+    </scroll-view>
+
+    <!-- 右侧数据 -->
+    <scroll-view scroll-y="true" class="right">
+        <view class="typeTree">
+            <block wx:for="{{typeTree[currType]}}">
+
+                <view wx:if="{{item.type == currType && item.type == 0}}" class="brand">
+                    <navigator url="/pages/goods-list/index" wx:for="{{item.data}}" wx:for-item="data" wx:key="typeId" class="item">
+                        <image src="{{data.pic}}?x-oss-process=image/resize,m_fill,w_75,h_75"></image>
+                        <text>{{data.name}}</text>
+                    </navigator>
+                </view>
+
+                <block wx:if="{{item.type != currType && item.type == 1}}">
+                    <view><text class="title">{{item.name}}</text></view>
+                    <view class="category">
+                        <block wx:for="{{item.data}}" wx:for-item="data" wx:key="typeId">
+                            <navigator url="/pages/goods-list/index" class="item">
+                                <image src="{{data.pic}}?x-oss-process=image/resize,m_fill,w_75,h_85"></image>
+                                <text>{{data.name}}</text>
+                            </navigator>
+                        </block>
+                    </view>
+                </block>
+            </block>
+        </view>
+    </scroll-view>
+</view>

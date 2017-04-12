@@ -1,0 +1,56 @@
+<import src="tpl.wxml"/>
+<template is="dialog_addr" data="{{...__dialog__}}"/>
+
+<view class="location flex-wrp" bindtap="switchAddress">
+    <view class="flex-wrp">
+        <image class="icon" src="/images/ic_position_dark@2x.png"></image>
+        <text class="title">庆春路222号</text>
+        <view class="u-triangle down"></view>
+    </view>
+
+</view>
+
+<!-- linkType: 1、图片不能点击 2、普通商品id 3、url 5、妈豆商品 itemNumID templateId 8、品牌列表 9、三级类目id -->
+
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-color="rgba(0,0,0,.1)" indicator-active-color="#ff4d61">
+    <block wx:for="{{bannerList}}">
+        <swiper-item>
+            <navigator url="{{item.linkTo}}">
+                <image src="{{item.pic}}" class="slide-image" mode="widthFix"/>
+            </navigator>
+        </swiper-item>
+    </block>
+</swiper>
+
+<view class="nav">
+    <navigator url="{{nav.linkTo}}">
+        <image src="{{nav.pic}}" mode="widthFix"/>
+    </navigator>
+</view>
+
+<view class="list">
+    <block wx:for="{{shopList}}" wx:key="*this">
+        <view>
+            <navigator url="/pages/store-index/index?shopId={{item.shopId}}" class="cover flex-wrp">
+                <image class="banner" src="{{item.shopLogo}}" mode="widthFix"></image>
+                <!-- type: 标识该门店类型 1-热门店 2-购买过 3-关注店 4-附近店 -->
+                <view class="label hot" wx:if="{{item.type==1}}">热门店</view>
+                <view class="label visited" wx:elif="{{item.type==2}}">购买过</view>
+                <view class="label follow" wx:else="{{item.type==3}}">关注店</view>
+            </navigator>
+            <view class="info">
+                <view class="flex-wrp">
+                    <text class="addr flex-item ellipsis">{{item.shopAddr}}</text>
+                    <text class="distance">500m</text>
+                </view>
+
+                <view class="act">
+                    <view class="act-item ellipsis" wx:for="{{item.shopActList}}" wx:for-item="act" wx:key="*this">
+                        <text class="type" style="color:{{act.iconColor}};border:1px solid {{act.iconColor}};">{{act.iconName}}</text>
+                        <text>{{act.actName}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

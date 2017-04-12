@@ -1,0 +1,16 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/.idea
+.DS_Store
+/build
+/captures
+/app/.gitignore
+/app/build
+build.gradle
+/app/app.iml
+
+/node_modules
+/dist

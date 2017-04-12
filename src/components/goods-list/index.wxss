@@ -1,0 +1,13 @@
+.goods-list{overflow: hidden}
+.goods-list .item{width: 50%;float: left;padding-bottom: 8rpx;}
+.goods-list .item:nth-child(odd){padding-right: 4rpx;}
+.goods-list .item:nth-child(even){padding-left: 4rpx;}
+.goods-list .item .detail{background-color: #fff;overflow: hidden;padding:20rpx;position: relative}
+.goods-list .item .detail .label{width: 50rpx;height: 50rpx;background-color: #FBA102;position: absolute;top:10rpx;right: 10rpx;color: #fff;text-align: center;font-size:26rpx;line-height:50rpx;}
+.goods-list .item .detail .name{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow: hidden;text-overflow: ellipsis; }
+.goods-list .item .detail .pic image{width: 100%}
+.goods-list .item .detail .pic{font-size:24rpx;}
+.goods-list .item .detail .price{font-size:30rpx;color: #ff4d61;padding:12rpx 0;}
+.goods-list .item .detail .price .pro-tag{padding:0 4px;border-radius:2px;background:#ff4d61;color:#fff;white-space:nowrap;font-size:24rpx;}
+.goods-list .item .detail .sale-count{font-size:20rpx;color: #999;}
+

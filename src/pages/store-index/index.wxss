@@ -1,0 +1,36 @@
+@import "../../components/goods-list/index.wxss";
+
+/* 门店详情 */
+.hr{border-top:1px solid #f0f0f0;height: 0;width: 100%;}
+.header{position:relative;overflow:hidden;height:180px;background-size:cover;background-repeat: no-repeat;}
+.header:after{position:absolute;right:0;bottom:0;left:0;z-index:1;height:80px;background:-webkit-linear-gradient(bottom,rgba(0,0,0,.7) 0,rgba(0,0,0,0) 80%);content:"";}
+.header .notice {position:absolute;right:0;bottom:0;left:0;z-index:2;padding:10px;color:#fff;align-items:flex-end;justify-content:flex-start;font-size:26rpx;}
+.header .notice .logo{overflow:hidden;margin-right:10px;width:50px;height:50px;background:#FFF;}
+.header .notice .label{padding:0 4px;border-radius:2px;background:#FF001D;color:#fff;white-space:nowrap;font-size:24rpx;}
+
+.section{background-color: #fff; }
+.introduce{padding:30rpx 20rpx;}
+.shopInfo .name{color: #000;padding-right: 50rpx;}
+.shopInfo .address{color: #999;font-size:24rpx;margin-top:6px;}
+.shopInfo .location,.shopInfo .customer-service{width: 62rpx;height: 62rpx;background-repeat: no-repeat;background-size: cover;margin:0 10px;}
+.shopInfo .location{background-image: url("/images/ic_store_map@2x.png");}
+.shopInfo .customer-service{background-image: url("/images/ic_store_phone@2x.png");}
+
+.introduce .service-label text{color: #ff8f35;border:1px solid #ff8f35;border-radius: 10px;padding:0 5px;margin-right:4px;font-size:20rpx;}
+.comment{padding:30rpx 20rpx;}
+.comment .people{padding-right:15px;}
+.comment .people image{width: 25px;height: 25px;border-radius:50%;margin-right:5px;overflow: hidden}
+.comment .rating{padding-right:15px;font-size:24rpx;}
+
+.act-list{padding:20rpx;margin:20rpx 0;overflow: hidden;}
+.act-list .item{font-size:24rpx;display: flex;align-items: center;padding: 10rpx 0;}
+.act-list .item .type{padding: 0 4px;border-radius:2px;font-size:20rpx;margin-right: 16rpx;}
+
+.goods-nav{margin-bottom:10rpx;}
+.goods-nav .types{white-space: nowrap;overflow-x: auto}
+.goods-nav .types text{font-size:28rpx;color: #666;padding: 0 30rpx;}
+.goods-nav .types .active{color: #ff4d61}
+.hr-v{padding: 40rpx 0;border-left:1px solid #f0f0f0;width:0;}
+.goods-nav .search{width: 32rpx;height: 32rpx;background-image: url('/images/ic_search_dark.png');background-repeat: no-repeat;background-size: cover;margin: 0 40rpx;}
+
+

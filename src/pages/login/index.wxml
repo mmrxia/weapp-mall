@@ -1,0 +1,24 @@
+<import src="../../components/wetoast/index.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="header">
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    <view class="title">{{userInfo.nickName}}</view>
+    <view class="subtitle">为了您的账号安全请及时绑定手机号</view>
+</view>
+
+<form bindsubmit="bindAccount">
+    <view class="section">
+        <input type="number" name="mobile" maxlength="11" placeholder="请输入手机号码" placeholder-class="placeholder" bindinput="" />
+    </view>
+    <view class="section flex-wrp">
+        <input class="flex-item" type="number" name="vcode" maxlength="6" placeholder="请输入验证码" placeholder-class="placeholder" />
+        <button class="u-btn btn-vcode" bindtap="getVcode" disabled="{{vcodeBtn.disabled}}">{{vcodeBtn.text}}</button>
+    </view>
+    <view class="section submit">
+        <button class="u-btn success max alone ban" form-type="submit" disabled>登录并绑定</button>
+    </view>
+</form>
+
+
+

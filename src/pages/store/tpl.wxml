@@ -1,0 +1,19 @@
+<template name="dialog_addr">
+    <view id="dialog_addr" class="dialog bottom {{ showDialog ? 'dialog_show' : '' }}">
+        <view class="dialog__mask" bindtap="closeDialog" />
+        <view class="dialog__container">
+            <view class="dialog__hd">选择地址<icon class="close" bindtap="closeDialog"></icon></view>
+            <view class="dialog__bd">
+                <view class="locate">定位到当前位置</view>
+                <view class="item-list">
+                    <view class="item" wx:for="{{content.data}}" wx:key="*this">
+                        <label><icon class="u-radio"></icon><text>{{item.gpsAddr}}{{item.addrDetail}}</text></label>
+                    </view>
+                </view>
+            </view>
+            <view class="dialog__ft">
+                <button class="u-btn success search" bindtap="closeDialog">其他地址</button>
+            </view>
+        </view>
+    </view>
+</template>

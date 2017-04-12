@@ -1,0 +1,25 @@
+{
+  "name": "weapp-mall",
+  "version": "1.0.0",
+  "description": "wechat inner app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mmrxia/weapp-mall.git"
+  },
+  "keywords": [
+    "wechat",
+    "mall"
+  ],
+  "author": "xqs",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-if-else": "^1.0.3",
+    "gulp-replace": "^0.5.4"
+  }
+}
