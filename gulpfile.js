@@ -12,8 +12,8 @@ var replace = require('gulp-replace'),
 var cfg = {
     env: 'pro',  //生产环境or开发环境
     imgPath:{
-        pro: 'http://img.mamahao.cn/',
-        dev: 'http://s.mamhao.cn/wxapp/'
+        pro: 'http://cdn.example.com/image/',
+        dev: 'http://dev.example.com/image/'
     }
 };
 
