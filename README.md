@@ -30,7 +30,18 @@
 3 . 关于静态资源，由于小程序文件体积限制，建议将`images`下的图片放在`cdn`服务器上，`coding`时直接使用`/images/xx.png`引用，构建时在`gulpfile.js`修改为`cdn`路径即可；     
 4 . `gulp`构建时会将最终资源打包到`src`同级目录`dist`中，开发者工具调试时引入该路径即可。 
 
+
 ```js
+//config
+var cfg = {
+    env: 'pro',  //生产环境or开发环境
+    imgPath:{
+        pro: 'http://cdn.example.com/image/',
+        dev: 'http://dev.example.com/image/'
+    }
+};
+
+//replace and clone
 gulp.task('clone', ['clean'], function () {
     return gulp.src(['./src/**/*.*', '!./src/images/**'])
         .pipe(replace('/images/', ifElse(cfg.env === 'pro', function () {
@@ -44,7 +55,6 @@ gulp.task('clone', ['clean'], function () {
         .pipe(gulp.dest('./dist'))
 });
 ```
-  
                                                
                                                
 #### 三、项目截图
