@@ -21,6 +21,9 @@
 
 .pmt{color: #000;font-size:14px;}
 .pmt .coupon,.pmt .other{padding: 10px;}
+.pmt .other{border-top:1px solid #f0f0f0;overflow: hidden;}
+.pmt .other .item{display: flex;align-items: center;}
+.pmt .other .item.inline{display: inline-block;}
 .pmt .label{background-color: #ff4d61; font-size: 12px; color: #FFF; padding: 1px 5px; border-radius: 2px; margin-right: 10px;}
 .pmt .coupon .label{background-color: #FBA200;}
 .pmt .item{padding:5px 0;}
@@ -46,10 +49,36 @@
 .section-qc-report{padding: 15px 10px;font-size:14px;}
 
 .section-tabs{margin-bottom:0;}
-.section-tabs .tab{padding: 10px 5px;text-align: center;color: #666;}
+.section-tabs .tabs{padding: 0 5px;}
+.section-tabs .tab{padding: 10px 5px;text-align: center;color: #666;font-size:15px;}
 .section-tabs .tab.active{color: #ff4d61;border-bottom: 2px solid #FF4D61;}
-.section-tabs .content .detail{font-size: 0;}
-.section-tabs .content .detail image{width: 100%;}
+.section-tabs .content{min-height: -webkit-calc(100vh - 94px);}
+.goods-desc{font-size: 0;}
+.goods-desc image{width: 100%;}
+
+.goods-params{padding: 0 10px;}
+.goods-params .title{color: #FF4D61;font-size:13px;padding: 10px 0;}
+.goods-params .item{justify-content: flex-start;padding: 10px 0;word-break: break-all;border-top:1px solid #f0f0f0;}
+.goods-params .item .key{color: #666;font-size:14px;flex-shrink: 0;padding-right:10px;width: 100px;}
+.goods-params .item .value{color: #333;font-size:13px;}
+
+.goods-comments .list{padding:10px;}
+.goods-comments .list .item {padding: 10px 0;border-bottom: 1px solid #f0f0f0;}
+.goods-comments .list .item .avatar{width: 40px;height: 40px;overflow: hidden;border-radius: 50%;margin-right: 10px;}
+.goods-comments .list .item .user-info .name{font-size:15px;color: #666;}
+.goods-comments .list .item .user-info .age{font-size:12px;color: #999;}
+.goods-comments .list .item .user-info .star-level{text-indent: -9999px;}
+.goods-comments .list .item .user-info .comment-time{font-size:12px;color: #ccc;}
+.goods-comments .list .item .comment{padding-left: 50px;}
+.goods-comments .list .item .comment .text{padding: 10px 0;font-size:14px;color: #666;}
+.goods-comments .list .item .comment .pics{padding-bottom: 10px;justify-content: flex-start;overflow-x: auto;white-space: nowrap;font-size:0;
+}
+.goods-comments .list .item .comment .pic{display:inline-block;width:90px;height:90px;background-repeat: no-repeat;background-position:center;background-size: cover;margin-right: 5px;}
+.goods-comments .list .item .comment .pic:last-child{margin-right: 0;}
+.goods-comments .list .item .shop-reply{color: #999;font-size:12px;background-color: #f7f7f7;padding: 10px;margin-bottom: 10px;}
+.goods-comments .list .item .status{color: #ccc;font-size:12px;}
+.goods-comments .list .item .sku{color: #999;font-size:12px;margin-left: 10px;}
+
 
 .footer .space{height: 50px;}
 .footer .option {position:fixed;bottom: 0;left: 0;right:0;background: #fff;height:50px;}

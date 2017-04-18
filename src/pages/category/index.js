@@ -34,9 +34,8 @@ Page({
                 url: ApiList.goodsTypeTree,
                 data: {typeId: +currType},
                 success: function (res) {
-                    _data.typeTree[currType] = res.data.data;
                     me.setData({
-                        typeTree: _data.typeTree
+                        [`typeTree.${currType}`]: res.data.data
                     });
                 }
             });

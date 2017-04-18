@@ -15,5 +15,5 @@
 .typeTree .brand image{ height: 75px;}
 .typeTree .category image{ height: 85px;}
 .typeTree .category{ padding-bottom: 10px;}
-.item text{ padding-bottom: 10px; display: block;}
+.item text{ padding-bottom: 10px; display: block;word-break:break-all;  }
 

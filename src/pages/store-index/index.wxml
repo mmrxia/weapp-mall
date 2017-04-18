@@ -1,5 +1,3 @@
-<import src="../../components/goods-list/index.wxml" />
-
 <view class="header" style="background-image: url('{{basicInfo.pic}}');">
     <view class="notice flex-wrp">
         <image class="logo" src="{{basicInfo.shopLogo}}" />
@@ -19,8 +17,8 @@
                 <view class="address">{{basicInfo.shopAddr}}</view>
             </view>
             <view class="opt">
-                <icon class="location"></icon>
-                <icon class="customer-service"></icon>
+                <icon class="location" bindtap="showMap"></icon>
+                <icon class="customer-service" bindtap="callService"></icon>
             </view>
         </view>
         <view class="service-label">
@@ -32,7 +30,7 @@
     <view class="hr"></view>
     <navigator class="flex-wrp u-arrow right comment">
         <view class="people flex-item">
-            <blcok wx:for="{{comment.people}}" wx:key="*this">
+            <blcok wx:for="{{comment.people}}">
                 <image src="{{item.memberHeadPic}}" />
             </blcok>
         </view>
@@ -45,7 +43,7 @@
 
 <view class="section">
     <view class="act-list">
-        <view class="item ellipsis" wx:for="{{shopActList}}" wx:key="*this">
+        <view class="item ellipsis" wx:for="{{shopActList}}">
             <text class="type" style="color:{{item.iconColor}};border:1px solid {{item.iconColor}};">{{item.iconName}}</text>
             <text>{{item.actName}}</text>
         </view>
@@ -65,5 +63,5 @@
     </view>
 </view>
 
-
-<template is="goods-list" data="{{...goodsList}}"></template>
+<import src="../../components/goods-list/index.wxml" />
+<template is="goods-list" data="{{goodsList}}"></template>

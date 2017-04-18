@@ -2,6 +2,7 @@
 import ApiList from  '../../config/api';
 import request from '../../utils/request';
 import promisify from '../../utils/promisify';
+import Map from '../../utils/map';
 
 let app = getApp();
 
@@ -63,7 +64,7 @@ Page({
                     {
                         "iconName":"公告",
                         "iconColor":"#ff4d61",
-                        "actName":"满5000减1000,满10000减2000  满5000减1000,满10000减2000 满5000减1000,满10000减2000"
+                        "actName":"这是一个门店公告"
                     }
                 ]
             },
@@ -80,22 +81,37 @@ Page({
                     {
                         "iconName":"公告",
                         "iconColor":"#ff4d61",
-                        "actName":"满5000减1000,满10000减2000"
+                        "actName":"这是一个门店公告"
                     },
                     {
                         "iconName":"满减",
+                        "iconColor":"#ff4d61",
+                        "actName":"满5000减1000,满10000减2000"
+                    },
+                    {
+                        "iconName":"满减2",
                         "iconColor":"#ff4d61",
                         "actName":"满5000减1000,满10000减2000"
                     }
                 ]
             }
         ],
-        "totalRow":100
+        "totalRow":100,
+        "deliveryAddress": '杭州市',
+        "actOffset": [
+            {offset: 0},
+            {offset: 0}
+        ]
     },
-    onLoad (options){
-        // 页面初始化 options为页面跳转所带来的参数
+    onLoad (){
+        const me = this;
 
-
+        //配送地址
+        Map.getRegeo().then(res=>{
+            me.setData({
+                deliveryAddress: res.street
+            })
+        });
 
         /*wx.request({
             method: 'post',
@@ -104,6 +120,26 @@ Page({
                 console.log(res)
             }
         })*/
+
+        me.data.actOffset.map((v, i)=>{
+            const shopActList = me.data.shopList[i].shopActList;
+            if(shopActList.length>1){
+                let actIndex = 0;
+                setInterval(()=>{
+                    actIndex++;
+                    if(actIndex > shopActList.length) actIndex = 0;
+                    let offset = 0;
+                    if(actIndex < shopActList.length){
+                        offset = -actIndex * 100 + '%';
+                    }else{
+                        actIndex = 0;
+                    }
+                    me.setData({
+                        [`actOffset[${i}].offset`]: offset
+                    })
+                },3000)
+            }
+        })
     },
     switchAddress(){
         const me = this;

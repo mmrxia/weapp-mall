@@ -12,10 +12,5 @@ App({
             console.info('getUserInfo', res)
         });
     },
-    globalData: {
-        userInfo: {
-            wx: null,
-            mmh: null
-        }
-    }
+    globalData: {}
 });

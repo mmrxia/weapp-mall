@@ -5,6 +5,7 @@
     "pages/category/index",
     "pages/goods-list/index",
     "pages/goods-detail/index",
+    "pages/goods-qc-report/index",
     "pages/cart/index",
     "pages/user/index",
     "pages/login/index"

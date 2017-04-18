@@ -4,7 +4,7 @@
 <view class="location flex-wrp" bindtap="switchAddress">
     <view class="flex-wrp">
         <image class="icon" src="/images/ic_position_dark@2x.png"></image>
-        <text class="title">庆春路222号</text>
+        <text class="title">{{deliveryAddress}}</text>
         <view class="u-triangle down"></view>
     </view>
 
@@ -29,7 +29,7 @@
 </view>
 
 <view class="list">
-    <block wx:for="{{shopList}}" wx:key="*this">
+    <block wx:for="{{shopList}}" wx:for-index="shopIndex">
         <view>
             <navigator url="/pages/store-index/index?shopId={{item.shopId}}" class="cover flex-wrp">
                 <image class="banner" src="{{item.shopLogo}}" mode="widthFix"></image>
@@ -45,9 +45,9 @@
                 </view>
 
                 <view class="act">
-                    <view class="act-item ellipsis" wx:for="{{item.shopActList}}" wx:for-item="act" wx:key="*this">
+                    <view class="flex-wrp act-item" wx:for="{{item.shopActList}}" wx:for-item="act"  style="transform: translateY({{actOffset[shopIndex].offset}});">
                         <text class="type" style="color:{{act.iconColor}};border:1px solid {{act.iconColor}};">{{act.iconName}}</text>
-                        <text>{{act.actName}}</text>
+                        <text class="flex-item ellipsis">{{act.actName}}</text>
                     </view>
                 </view>
             </view>

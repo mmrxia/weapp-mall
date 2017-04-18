@@ -1,4 +1,7 @@
-// 获取用户GPS定位信息;
+/*
+* 地理位置相关方法
+* by xqs 2017/4/14
+* */
 import cfg from '../config/index.js';
 import Map from '../libs/amap-wx.js';
 import {co, Promise, regeneratorRuntime} from 'co-loader';
@@ -6,6 +9,7 @@ import {co, Promise, regeneratorRuntime} from 'co-loader';
 export default {
     /*
     * 获取地址描述数据
+    * 数据结构(8个字段)：经纬度、区域ID、省市区、街道、数据标识source
     * */
     getRegeo(){
         return new Promise((resolve, reject) => {
@@ -15,37 +19,48 @@ export default {
                     mmh_user = userInfo.mmh;
 
                 //优先级：默认收货地址、当前切换的地址、gps定位地址、默认定义的地址
-                const location = mmh_user && mmh_user.defaultAddr || cfg.location.current || cfg.location.gps;
-                if(location) return resolve(location);
+                 /* step: 1 */
+                const userAddr = mmh_user && mmh_user.defaultAddr;
+                if(userAddr){
+                    return resolve({
+                        lat: userAddr.lat,
+                        lng: userAddr.lng,
+                        areaId: userAddr.areaId,
+                        province: userAddr.prv,
+                        city: userAddr.city,
+                        district: userAddr.area,
+                        street: userAddr.gpsAddr,
+                        source: "user"
+                    });
+                }
 
+                /* step: 2 */
+                if(cfg.location.current || cfg.location.gps){
+                    return resolve(cfg.location.current || cfg.location.gps);
+                }
+
+                /* step: 3 */
                 const __map = new Map.AMapWX({key: cfg.ak});
-
                 __map.getRegeo({
                     success(res){
                         const data = res[0],
                             address = data.regeocodeData.addressComponent;
 
-                        const gpsData = {
+                        cfg.location.gps = {
                             lat: data.latitude,
                             lng: data.longitude,
-                            citycode: address.citycode,
                             areaId: address.adcode,
                             province: address.province,
                             city: address.city,
                             district: address.district,
                             street: address.streetNumber.street,
-                            streetNumber: address.streetNumber.number,
-                            township: address.township,
-                            formattedAddress: data.regeocodeData.formatted_address,
-                            source: "user"
+                            source: "gps"
                         };
-
-                        cfg.location.gps = gpsData;
-                        resolve(gpsData)
+                        resolve(cfg.location.gps);
                     },
-                    fail(){
+                    fail(res){
                         console.warn('[AMapWX getRegeo] ', res);
-                        resolve(cfg.location.defaults)
+                        resolve(cfg.location.defaults);
                     }
                 })
             });

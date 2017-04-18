@@ -22,7 +22,7 @@
     <view class="title">
         <text class="label zy">自营</text>
         <text class="label std" wx:if="{{shop}}">实体店</text>
-        {{title}}
+        <text>{{title}}</text>
     </view>
     <view class="subtitle">{{subtitle}}</view>
 </view>
@@ -34,10 +34,24 @@
                 <view class="item"><text class="label">领券</text>{{extInfo.goodsCouponList.vouchers[0].des}}</view>
             </block>
         </view>
-        <view class="hr"></view>
-        <view class="other">
-            <view class="item"><text class="label">麻豆</text>购买可获100麻豆</view>
-            <view class="item"><text class="label">满减</text>满1000减500</view>
+        <view class="other" wx:if="{{extInfo.promotionList && extInfo.promotionList.length}}">
+            <block wx:for="{{extInfo.promotionList}}">
+                <view class="item {{extInfo.promotionList.length<4 || index<2 ? '' : 'inline'}}">
+                    <!--促销类型枚举值：1.直降, 5满减促销,3满赠促销,4组合促销,6赠品促销-->
+                    <!--落地类型枚举值：1.无, 2.商品详情页, 3.H5链接, 4.原生ID页面, 5.妈豆商品, 6.众筹商品, 7.类目主页, 8.品牌商品列表, 9.三级类目商品列表, 10.门店;-->
+                    <text class="label" wx:if="{{item.promotionType == 0}}">妈豆</text>
+                    <text class="label" wx:elif="{{item.promotionType == 1}}">直降</text>
+                    <text class="label" wx:elif="{{item.promotionType == 3}}">满赠</text>
+                    <text class="label" wx:elif="{{item.promotionType == 4}}">套餐</text>
+                    <text class="label" wx:elif="{{item.promotionType == 5}}">满减</text>
+                    <text class="label" wx:elif="{{item.promotionType == 6}}">赠品</text>
+                    <text class="label" wx:elif="{{item.promotionType == 7}}">凑单</text>
+
+                    <block wx:if="{{extInfo.promotionList.length<4 || index<2}}">
+                        {{item.promotionName}}
+                    </block>
+                </view>
+            </block>
         </view>
     </view>
 </view>
@@ -49,7 +63,7 @@
             <view class="content">
                 <view class="address ellipsis">
                     <image class="icon" src="/images/ic_position_red_min.png" />
-                    <text>望江东路中豪望江国际望江东路中豪望江国际望江东路中豪望江国际</text>
+                    <text>{{deliveryAddress}}</text>
                 </view>
                 <view class="arrive-time">现在下单，预计今日17：:3前送达</view>
             </view>
@@ -81,24 +95,13 @@
     </view>
 </view>
 
-<view class="section section-qc-report">
+<navigator url="/pages/goods-qc-report/index?itemId={{itemId}}" class="section section-qc-report" wx:if="{{qualityPic && qualityPic.length}}">
     <view class="u-arrow right">质检证书</view>
-</view>
+</navigator>
 
 <view class="section section-tabs">
-    <view class="tabs flex-wrp">
-        <view class="tab flex-item active">图文详情</view>
-        <view class="tab flex-item">商品参数</view>
-        <view class="tab flex-item">商品口碑</view>
-    </view>
-    <view class="hr"></view>
-    <view class="content">
-        <view class="item detail">
-            <block wx:for="{{detailPic}}">
-                <image src="{{item}}" mode="widthFix"/>
-            </block>
-        </view>
-    </view>
+    <import src="../../components/tab/index.wxml" />
+    <template is="tab" data="{{currTabIndex, tabs}}"></template>
 </view>
 
 <view class="footer">
@@ -113,6 +116,8 @@
             <view class="flex-item flex-wrp btn add-cart">加入购物车</view>
             <view class="flex-item flex-wrp btn buy-now">立即购买</view>
         </block>
-        <view wx:if="{{!isInStock}}" class="flex-item flex-wrp btn disabled">所在区域缺货</view>
+        <block wx:else>
+            <view class="flex-item flex-wrp btn disabled">所在区域缺货</view>
+        </block>
     </view>
 </view>

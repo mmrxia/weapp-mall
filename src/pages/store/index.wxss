@@ -8,20 +8,20 @@
 
 .list .cover{position: relative;overflow: hidden}
 .list .cover .name{position: absolute;}
-.list .label{position: absolute;top:6px;right: -42px;padding: 3px 40px;transform: rotate(50deg);color: #fff;font-size:22rpx;}
+.list .label{position: absolute;top:6px;right: -42px;padding: 3px 40px;transform: rotate(50deg);color: #fff;font-size:11px;}
 .list .label.hot{background-color: #FF0000;}
 .list .label.follow{background-color: #FF7800;}
 .list .label.visited{background-color: #0081FF;}
 .list image{width: 100%}
 .list .info{padding: 15px 10px}
-.list .info .addr{color: #000;font-size:32rpx;}
+.list .info .addr{color: #000;font-size:16px;}
 .list .info .distance{margin-left: 20px;}
 
 .list .info .act{height:28px;overflow: hidden;}
-.list .info .act-item{font-size:24rpx;display: flex;align-items: center;padding: 10rpx 0;}
-.list .info .act-item .type{padding: 0 4px;border-radius:2px;font-size:20rpx;margin-right: 16rpx;}
+.list .info .act-item{height:100%;font-size:12px;justify-content: flex-start;transition: all .4s;}
+.list .info .act-item .type{padding: 0 4px;border-radius:2px;font-size:10px;margin-right: 8px;}
 
-#dialog_addr .locate {padding: 10px;border-top: 1px solid #f0f0f0;border-bottom: 1px solid #f0f0f0;display: flex;align-items: center}
+#dialog_addr .locate {padding: 10px;border-bottom: 1px solid #f0f0f0;display: flex;align-items: center}
 #dialog_addr .search{display: flex;align-items: center;justify-content: center}
 #dialog_addr .locate:before,
 #dialog_addr .search:before {content: '';display: inline-block;width: 18px;height:18px;margin-right: 8px;vertical-align: middle;background-size: cover;}
