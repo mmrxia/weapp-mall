@@ -309,9 +309,6 @@ Page({
             data: {shopId: options.shopId},
             success(res){
 
-            },
-            fail(res){
-                console.err(res)
             }
         });
 

@@ -1,0 +1,22 @@
+<template name="tab">
+    <view class="mmh-tabs">
+        <view class="tabs flex-wrp">
+            <block wx:for="{{tabs}}">
+                <view class="tab flex-item {{currTabIndex == index ? 'active' : ''}}" data-index="{{index}}" bindtap="_handleTabChange">{{item.title}}</view>
+            </block>
+        </view>
+
+        <view class="hr"></view>
+
+        <view class="content">
+            <block wx:for="{{tabs}}" wx:for-item="item">
+                <view class="item {{item.tplName}} {{currTabIndex != index ? 'hidden' : ''}}" >
+                    <template is="{{item.tplName}}" data="{{...item.data}}"></template>
+                </view>
+            </block>
+        </view>
+    </view>
+</template>
+
+ <!--所有tab涉及到的模板文件-->
+<import src="../../pages/goods-detail/tpl.wxml"/>
