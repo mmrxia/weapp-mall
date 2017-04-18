@@ -12,3 +12,4 @@ image{max-width: 100%;}
 .flex-item{flex:1;overflow: auto}
 
 .ellipsis{overflow: hidden;text-overflow: ellipsis;white-space: nowrap}
+.hidden{display: none !important;}
