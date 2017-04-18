@@ -1,35 +1,37 @@
 <view class="section">
     <!-- 左侧类型 -->
-    <scroll-view scroll-y="true" class="left">
-        <view wx:for="{{types}}" wx:key="typeId" data-type-id="{{item.typeId}}" bindtap="tapType" class="{{item.typeId == currType ? 'active' : ''}}">
+    <view scroll-y="true" class="types">
+        <view wx:for="{{types}}" wx:key="typeId" data-type-id="{{item.typeId}}" bindtap="changeType" class="{{item.typeId == currType ? 'active' : ''}}">
             {{item.name}}
         </view>
-    </scroll-view>
+    </view>
 
     <!-- 右侧数据 -->
-    <scroll-view scroll-y="true" class="right">
-        <view class="typeTree">
-            <block wx:for="{{typeTree[currType]}}">
+    <view scroll-y="true" class="typeTree">
+        <block wx:for="{{typeTree[currType]}}">
 
-                <view wx:if="{{item.type == currType && item.type == 0}}" class="brand">
+            <!--品牌-->
+            <view wx:if="{{item.type == 0}}" class="brand">
+                <view class="list">
                     <navigator url="/pages/goods-list/index" wx:for="{{item.data}}" wx:for-item="data" wx:key="typeId" class="item">
                         <image src="{{data.pic}}?x-oss-process=image/resize,m_fill,w_75,h_75"></image>
-                        <text>{{data.name}}</text>
+                        <text class="name">{{data.name}}</text>
                     </navigator>
                 </view>
+            </view>
 
-                <block wx:if="{{item.type != currType && item.type == 1}}">
-                    <view><text class="title">{{item.name}}</text></view>
-                    <view class="category">
-                        <block wx:for="{{item.data}}" wx:for-item="data" wx:key="typeId">
-                            <navigator url="/pages/goods-list/index" class="item">
-                                <image src="{{data.pic}}?x-oss-process=image/resize,m_fill,w_75,h_85"></image>
-                                <text>{{data.name}}</text>
-                            </navigator>
-                        </block>
-                    </view>
-                </block>
-            </block>
-        </view>
-    </scroll-view>
+            <!--分类-->
+            <view wx:if="{{item.type == 1}}" class="category">
+                <view class="title">{{item.name}}</view>
+                <view class="list">
+                    <block wx:for="{{item.data}}" wx:for-item="data" wx:key="typeId">
+                        <navigator url="/pages/goods-list/index" class="item">
+                            <image src="{{data.pic}}?x-oss-process=image/resize,m_fill,w_75,h_85"></image>
+                            <text class="name">{{data.name}}</text>
+                        </navigator>
+                    </block>
+                </view>
+            </view>
+        </block>
+    </view>
 </view>
