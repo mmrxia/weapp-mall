@@ -4,10 +4,11 @@ import {complete} from 'promisify';
 
 const request = co.wrap(function *(opt) {
     let app = getApp();
+    const contentType = /GET/i.test(opt.method) ? 'application/json' : 'application/x-www-form-urlencoded';
     const option = {
         url: opt.url,
         method: (opt.method || "POST").toUpperCase(),
-        header: Object.assign({'content-type': 'application/x-www-form-urlencoded'}, opt.header),
+        header: Object.assign({'content-type': contentType}, opt.header),
         data: opt.data || {},
         success: opt.success || null,
         fail: opt.fail || null,
