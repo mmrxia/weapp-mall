@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view wx:for="{{msgList}}" wx:key="id"  class='msg-item' animation='{{item.wrapAnimation}}'>
+    <view id='{{item.id}}' class='msg' animation='{{item.animation}}' bindtouchstart='ontouchstart' bindtouchmove='ontouchmove' bindtouchend='ontouchend'>
+        <view class='user-name'>{{item.userName}}</view>
+        <view class='msg-text'>{{item.msgText}}</view>
+    </view>
+    <view class='msg-menu'>
+        <view id='{{item.id}}' class='menu-delete' bindtap='onDeleteMsgTap'>
+            删除
+        </view>
+    </view>
+</view>
