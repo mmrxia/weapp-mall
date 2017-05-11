@@ -1,5 +1,5 @@
 {
-  "name": "weapp-mall",
+  "name": "wxapp",
   "version": "1.0.0",
   "description": "wechat inner app",
   "main": "index.js",
@@ -8,18 +8,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:mmrxia/weapp-mall.git"
+    "url": "git@192.168.10.23:fed/WeChat.git"
   },
   "keywords": [
-    "wechat",
-    "mall"
+    "wechat"
   ],
-  "author": "xqs",
+  "author": "mamahao.com",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-if-else": "^1.0.3",
     "gulp-replace": "^0.5.4"
+  },
+  "dependencies": {
+    "gulp-util": "^3.0.8"
   }
 }
