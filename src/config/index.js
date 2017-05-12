@@ -1,5 +1,7 @@
-// 小程序通过配置信息;
-const AppConfig = {
+// 小程序通用配置信息;
+let AppConfig = {
+    env: 'dev',     //当前开发环境: local,dev,pro
+
     appid: "your appid",                //app id
     secret: "your appsecret",           //app secret
 
@@ -31,5 +33,8 @@ const AppConfig = {
         qcRpt: "_qc_report",                    // 质检报告
     },
 };
+
+//获取配置文件
+Object.assign(AppConfig, require(`./env/${AppConfig.env}`).default);
 
 export default AppConfig;
