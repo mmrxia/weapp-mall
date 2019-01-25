@@ -2,12 +2,6 @@
 > 本开源项目旨在根据如今流行的电商app作为参考，开发出一套基础功能完善的小程序电商系统，帮助中小电商企业能够快速引流和推广使用。
 > 还可以为广大的前端开发工程师、小程序开发者快速迭代出公司需要的电商项目。
 
-本项目特性：
-+ 全面使用es6语法，支持async/await
-+ 封装通用组件，如modal、dialog、sku、侧滑删除、数量增减、图片fadeIn、marquee等
-+ 通过gulp sftp，上传静态资源到cdn
-+ iphone6尺寸作为标准设计稿，依旧使用rpx作为css编写的单位
-
 ### 小程序功能
 
 + 首页
@@ -34,31 +28,46 @@
 
 ```
 .
-├── README.md
-├── config                     
-│   ├── api.js
-│   └── index.js
 ├── src                        
-│   ├── images                  // 主题 字体等静态资源
-│   ├── styles                  // 全局公用组件
-│   ├── libs                    // 库文件
+│   ├── assets                  // 要上传到ftp的静态资源文件
 │   ├── components              // 组件
 │   │   ├── dialog   
 │   │   ├── quantity   
+│   ├── config              // 组件
+│   │   ├── api.js   
+│   │   ├── index.js   
+│   ├── images                  // 项目内公用图片文件, tabbar等
+│   ├── libs                    // 库文件
 │   ├── pages                   // 业务页面
 │   │   ├── ...                
+│   ├── styles                  // 样式文件
 │   ├── subPages                // 分包页面
 │   │   ├── ...                
 │   ├── utils                   // 通用方法
-│   ├── app.js                  //全局入口
+│   ├── app.js                  // 全局入口及配置
 │   ├── app.json                  
-│   └── app.wxss                  
-├── package.json                // npm的依赖、项目信息文件
-├── gulpfile.js                 // gulp打包
+│   └── app.less                  
 ├── .editorconfig                 
+├── .eslintignore                 
+├── .eslintrc.js                 
 ├── .gitignore                 
+├── config.js                   // 配置文件，如ftp、cdn路径等，可修改
+├── gulpfile.js                 // gulp打包
+├── package.json                // npm的依赖、项目信息文件
+├── README.md                   
 
 ```
+
+本项目特性：   
+基于Gulp 4.0开发，开发者工具引入`dist`目录，开发时使用`src`目录。
+    
++ 全面使用es6语法，支持async/await
++ 封装通用组件，如modal、dialog、sku、侧滑删除、数量增减、图片fadeIn、marquee等
++ iphone6尺寸作为标准设计稿，使用px作为css编写单位，自动转换为rpx
++ 使用less、sass（需要改配置）编写样式
++ 通过gulp sftp，一键上传静态资源到FTP或CDN
++ 定义api接口文档规范，配置mock数据
+
 
 #### 开发必备
 1 . [微信开发者工具下载](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)
