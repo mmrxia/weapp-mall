@@ -13,6 +13,7 @@ const gulp = require('gulp'),
     gulpif = require('gulp-if'),
     replace = require('gulp-replace'),
     less = require('gulp-less'),
+    rename = require('gulp-rename'),
     gutil = require('gulp-util'),
     sftp = require('gulp-sftp');
 
@@ -39,7 +40,7 @@ let paths = {
     }
 };
 
-/*===== 定义主要方法 ====*/
+/*===== 定义主要任务方法 ====*/
 
 // 日志输出
 function log() {
@@ -63,10 +64,13 @@ function copyFiles(file) {
 function compileLESS(file) {
     let files = typeof file === 'string' ? file : paths.src.lessFiles;
     return gulp.src(files)
-        .pipe(replace(/(\d+)px/gi, function (m, num) {
+        .pipe(less())
+        .pipe(replace(/(-?\d+(\.\d+)?)px/gi, function (m, num) {
             return 2 * num + 'rpx'; //替换1px为2rpx， 0.5px为1rpx
         }))
-        .pipe(less())
+        .pipe(rename({'extname': '.wxss'}))     //修改文件类型
+        .pipe(replace('.scss', '.wxss'))        //替换引用less时的路径
+        .pipe(gulpif(!!config.assetsPath, replace('@assets', config.assetsPath)))
         .pipe(gulp.dest(paths.dist.baseDir));
 }
 
@@ -74,13 +78,8 @@ function compileLESS(file) {
 function copyWXML(file) {
     let files = typeof file === 'string' ? file : paths.src.wxmlFiles;
     return gulp.src(files)
-        .pipe(gulpif(config.assetsPath, replace('@assets', config.assetsPath)))
+        .pipe(gulpif(!!config.assetsPath, replace('@assets', config.assetsPath)))
         .pipe(gulp.dest(paths.dist.baseDir));
-}
-
-// 替换目录路径
-function replaceDir(file) {
-    return file.replace(`${paths.src.baseDir}`, `${paths.dist.baseDir}`);
 }
 
 //监听文件
@@ -116,6 +115,14 @@ function uploadFTP() {
     return gulp.src(paths.src.assetsDir)
         .pipe(sftp(config.ftp));
 }
+
+/*===== 定义其他util方法 ====*/
+
+// 替换目录路径
+function replaceDir(file) {
+    return file.replace(`${paths.src.baseDir}`, `${paths.dist.baseDir}`);
+}
+
 
 /*======= 注冊任務 =======*/
 
