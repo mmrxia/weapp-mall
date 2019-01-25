@@ -1,0 +1,21 @@
+.goods-banner{width:100vw;height: 100vw;}
+
+.goods-info{margin-bottom: 20rpx;padding: 20rpx;background-color: #fff;}
+.goods-info .title{margin-bottom: 10rpx;}
+.goods-info .title .label{font-size: 22rpx;color: #fff;background-color: #E4393C;padding: 2rpx 10rpx;border-radius: 4rpx;margin-right: 10rpx;}
+.goods-info .title .label.green{background-color: #08AF37;}
+.goods-info .title .text{font-size: 30rpx;color: #333;margin-bottom: 20rpx;}
+.goods-info .sub-title{font-size: 24rpx;color: #ef3325;margin-bottom: 10rpx;}
+.goods-info .price{font-size: 24rpx;display: flex;align-items: flex-end;}
+.goods-info .price .c-price{color: #ef3325;margin-right: 20rpx;}
+.goods-info .price .c-price .val{font-size: 32rpx;}
+.goods-info .price .o-price{color: #ccc;}
+
+.footer{position: fixed;bottom: 0;width: 100%;z-index: 1;display: flex;text-align: center;}
+.footer .btn-icon{flex: 1;display: flex;font-size: 24rpx;border-top: 1px solid #f2f2f2;}
+.footer .btn-icon .icon{width: 40rpx;height: 40rpx;}
+.footer .btn-icon .btn{flex: 1;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+.footer .btn-option{flex: 3;display: flex;}
+.footer .btn-option .btn {flex: 1;padding: 30rpx 10rpx;font-size: 30rpx;color: #fff;}
+.footer .btn-option .btn-cart{background: #333;}
+.footer .btn-option .btn-buy{background: #f63147;}

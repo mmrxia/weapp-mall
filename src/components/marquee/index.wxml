@@ -1,0 +1,22 @@
+<view class="c-marquee">
+    <block wx:if="{{marqueeItem}}">
+        <view class="marquee-item" animation="{{animationData}}" catchtap="onTap">
+            <block wx:if="{{marqueeItem.goods}}">
+                <image class="avatar" src="{{marqueeItem.goods.goodsPic}}"></image>
+                <view class="content">
+                    <text wx:if="{{marqueeItem.location}}">{{marqueeItem.location}}</text>
+                    {{marqueeItem.name}}{{marqueeItem.time}}秒前购买了{{marqueeItem.goods.goodsName}}
+                </view>
+                <view class="c-arrow right"></view>
+            </block>
+            <block wx:else>
+                <image class="avatar" src="{{marqueeItem.avatar}}"></image>
+                <view class="content">
+                    <text>{{marqueeItem.city}} {{marqueeItem.name}}购买了该商品，{{marqueeItem.time}}秒前</text>
+                </view>
+            </block>
+        </view>
+    </block>
+</view>
+
+

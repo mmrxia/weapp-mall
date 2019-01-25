@@ -1,1 +1,10 @@
-/* pages/cart/index.wxss */
+.group-title{padding: 20rpx;}
+.group-list .group-item{}
+
+/*底部*/
+.footer{height: 100rpx;position: fixed;bottom:0;left: 0;right: 0;background-color: #ffffff; border-top:1px solid #f0f0f0;z-index:2;  }
+.footer .selectAll{padding-left: 20rpx;}
+.footer .selectAll .title{color: #000;margin-left: 20rpx;}
+.footer .totalPrice{margin: 0 20rpx;text-align: right}
+.footer .totalPrice .num{color: #FD3D37;}
+.footer .btn-checkout{height: 100%;border-radius: 0;}

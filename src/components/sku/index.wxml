@@ -1,0 +1,34 @@
+<view class="sku_container">
+    <!--header-->
+    <view class="sku_hd">
+        <image class="sku-pic" src="//m.360buyimg.com/mobilecms/s750x750_jfs/t1/8332/4/12559/107539/5c3644b5E0a2ab9eb/507437b95b0abbad.jpg!q80.dpg"></image>
+        <view class="sku-desc">
+            <view class="title">SK-II新年神仙水230ml补水保湿护肤套装</view>
+            <view class="price">￥690</view>
+        </view>
+    </view>
+
+    <!--body-->
+    <view class="sku_bd">
+        <view class="sku-group">
+            <view class="group">
+                <view class="title">产品</view>
+                <view class="list">
+                    <view class="item" catchtap="skuClick">【新年限量版】神仙水230ml</view>
+                    <view class="item active" catchtap="skuClick">神仙水75ml</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="sku-quantity">
+            <view class="title">购买数量</view>
+            <component-quantity bind:change="onQuantityChange"></component-quantity>
+        </view>
+    </view>
+
+    <!--footer-->
+    <view class="sku_ft">
+        <view class="btn-confirm" catchtap="sku_confirm">{{info.btnText || '确定'}}</view>
+    </view>
+</view>
+

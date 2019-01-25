@@ -1,0 +1,25 @@
+page{background: #fff;position: relative;color: #333333;font-size: 28rpx}
+image{max-width: 100%;}
+::-webkit-scrollbar{width:0;height:0;background-color: transparent;opacity: 0;color:transparent}
+
+view,
+text,
+icon,
+button,
+input,
+swiper,
+swiper-item,
+scroll-view,
+navigator {box-sizing:border-box;color: inherit;font: inherit;height:initial;}
+
+.flex{display: flex;}
+.flex-center{display: flex;align-items: center;justify-content: center;}
+.flex-between{display: flex;align-items: center;justify-content: space-between;}
+.flex-end{display: flex;align-items: center;justify-content: flex-end;}
+.flex-none{flex:none;}
+.flex-item{flex: 1;overflow: auto;}
+
+/*重置radio*/
+.wx-radio-input{ width:16px !important; height:16px !important; }
+.wx-checkbox-input{ width:16px !important; height:16px !important; border-radius: 50% !important;}
+

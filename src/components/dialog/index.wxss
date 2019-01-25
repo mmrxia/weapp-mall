@@ -1,69 +1,8 @@
-.dialog__mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.65);
-    visibility: hidden;
-    opacity: 0;
-    transition: all .4s ease;
-}
-.dialog__container {
-    position: fixed;
-    opacity: 0;
-    visibility: hidden;
-    background: #fff;
-    transition: all .4s ease;
-    z-index: 11;
-}
-.dialog__hd{
-    font-size:17px;
-    text-align: center;
-    border-bottom:1px solid #f0f0f0;
-    padding: 10px 0;
-    position: relative;
-}
-.dialog__hd .close{
-    width: 20px;height: 20px;position: absolute;right: 10px;top:10px;background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAAGFBMVEUAAACZmZmZmZmZmZmZmZmZmZmZmZmZmZl5tJwoAAAAB3RSTlMAzhK9ujMwkcXpYwAAAH9JREFUKM+10rENgCAQhWHiCDS2OIRxAx3AFVzA6P4xweJ/l5dABc0d8BnhjjRmXEVn017DlnVxef5wF4FzDhFBAiBjn9S2yYFMgMyAUCAUqBQoFCgUKBRoi93P+ZEfqXt4rtkriJfOi+ztaDXOW0wCIEZxxAf21nDGp7imIeMDAqcaxPy7PM4AAAAASUVORK5CYII=') no-repeat;background-size: cover;
-}
+.dialog__mask{position:fixed;top:0;right:0;bottom:0;left:0;z-index:10;visibility:hidden;background:rgba(0,0,0,.65);opacity:0;transition:all .4s ease}
+.dialog__container{position:fixed;z-index:11;visibility:hidden;background:#fff;opacity:0;transition:all .4s ease;overflow:hidden;}
+.dialog__container .back,.dialog__container .close{position:absolute;top:12px;right:10px;width:20px;height:20px;}
 
-.dialog__ft .u-btn{display:block;border: 0;border-radius: 0;font-size :15px;padding: 13px 22px;}
-
-.dialog_show .dialog__container {
-    visibility: visible;
-    opacity: 1;
-}
-.dialog_show .dialog__mask {
-    opacity: 1;
-    visibility: visible;
-}
-
-.dialog.bottom .dialog__container{
-    right: 0;
-    bottom: 0;
-    left: 0;
-    min-height: 46%;
-    max-height: 78%;
-    transform: translateY(50%);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-.dialog.bottom .dialog__bd{flex: 1;}
-.dialog.bottom .dialog__hd,.dialog.bottom .dialog__ft{flex: none;}
-.dialog.bottom.dialog_show .dialog__container{
-    transform: translateY(0);
-}
-
-.dialog.right .dialog__container{
-    top:0;
-    right: 0;
-    bottom: 0;
-    width: 87%;
-    transform: translateX(50%);
-}
-.dialog.right.dialog_show .dialog__container{
-    transform: translateX(0);
-}
+.dialog .dialog__container{right:0;bottom:0;left:0;height:inherit; transform:translateY(50%);flex-direction:column}
+.dialog.dialog_show .dialog__container{transform:translateY(0)}
+.dialog.dialog_show .dialog__container{visibility:visible;opacity:1;min-height:36vh;}
+.dialog.dialog_show .dialog__mask{visibility:visible;opacity:1}

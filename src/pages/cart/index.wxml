@@ -1,0 +1,22 @@
+<view class="goods-list">
+    <view class="goods-group">
+        <view class="group-title">自营</view>
+        <view class="group-list">
+            <view class="group-item"></view>
+        </view>
+    </view>
+</view>
+
+
+<!--底部-->
+<view class="footer flex-between">
+    <view class="flex-none selectAll" catchtap="onSelectAll">
+        <view class="u-checkbox checked"></view>
+        <text class="title">全选</text>
+    </view>
+    <view class="flex-item totalPrice">
+        <text>合计:</text>
+        <text class="num">￥1280</text>
+    </view>
+    <button class="flex-none u-btn btn-checkout checked">结算</button>
+</view>

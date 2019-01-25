@@ -1,0 +1,10 @@
+.modal{display: flex;position:fixed;top:0;right:0;bottom:0;left:0;z-index:10;background:rgba(0,0,0,.65);visibility:hidden;opacity:0;transition: .4s ease;}
+.modal.modal_show{opacity:1;visibility:visible;}
+
+.modal__container{margin: auto;background: #fff;width: 68vw;border-radius:10rpx;overflow:hidden;}
+.modal__container .title{padding:20rpx;border-bottom:1rpx solid #f0f0f0;text-align:center;font-size:34rpx;margin-bottom: 20rpx;}
+.modal__container .content{padding:5vh 20rpx;color: #4a4a4a;text-align: left;font-size: 24rpx;color: #4a4a4a;}
+
+.modal__ft{display: flex;}
+.modal__ft .modal__btn{font-size:32rpx;color: #4a4a4a;background: #fff;text-align: center;flex: 1;padding:20rpx;border-top: 1rpx solid #f0f0f0;}
+.modal__ft .modal__btn.confirm{color: #fff;background: #ff4d61;border-top: 1rpx solid #ff4d61;}

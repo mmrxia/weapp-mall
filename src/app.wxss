@@ -1,8 +1,6 @@
-/*layout*/
-@import "styles/layout.wxss";
-@import "styles/comn.wxss";
+@import "styles/common.wxss";
+@import "styles/widget.wxss";
 
-/*components*/
-@import "components/wetoast/index.wxss";
-@import "components/dialog/index.wxss";
-@import "components/modal/modal.wxss";
+
+
+

@@ -1,0 +1,6 @@
+.c-quantity{overflow: hidden;display: inline-flex;border: 1px solid #dcdcdc;height:60rpx;line-height: 60rpx;text-align: center; }
+.c-quantity .btn{width: 60rpx;height: 100%;}
+.c-quantity .btn.disabled{color: #dcdcdc;}
+.c-quantity .decrement:before{content: '-';font-size:40rpx;}
+.c-quantity .increment:before{content: '+';font-size:40rpx;}
+.c-quantity .num{min-width: 64rpx;height: 100%;border-left:2rpx solid #dcdcdc;border-right:2rpx solid #dcdcdc;}

@@ -1,0 +1,12 @@
+.search-bar{padding:15rpx 25rpx 30rpx;background: #ff4d61}
+.search-bar .icon-search{margin-right: 5rpx}
+.search-bar .input{padding:15rpx;border-radius: 30rpx;background: rgba(255,255,255,.25);color: #FFF;text-align: center}
+
+.navbar{white-space: nowrap;background: #FFF;}
+.navbar .item{display: inline-block;padding: 0 32rpx;}
+.navbar .item .item-txt{display: inline-block;padding: 27rpx 0;}
+.navbar .item.active .item-txt{color: #ff4d61;border-bottom: 4rpx solid #ff4d61;font-weight: 600}
+
+.banner{width:100vw;height: 366rpx;}
+.swiper-item{height: 100%;}
+.container{padding: 20rpx 0;}

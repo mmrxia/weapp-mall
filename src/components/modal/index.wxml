@@ -1,0 +1,20 @@
+<view class="modal {{ show ? 'modal_show' : '' }}" catchtap="hide">
+    <!--container-->
+    <view class="modal__container" catchtap='doNothing'>
+
+        <block wx:if="{{slot}}">
+            <slot></slot>
+        </block>
+        <block wx:else>
+            <view wx:if="{{title}}" class="title">{{title}}</view>
+            <view wx:if="{{content}}" class="content">{{content}}</view>
+        </block>
+
+        <!--footer-->
+        <view class="modal__ft">
+            <view class="modal__btn cancel" catchtap="cancel">取消</view>
+            <view class="modal__btn confirm" catchtap="confirm">确定</view>
+        </view>
+    </view>
+</view>
+

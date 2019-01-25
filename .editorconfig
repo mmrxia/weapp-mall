@@ -1,0 +1,19 @@
+# 根目录
+root = true
+
+# 匹配所有文件类型
+[*]
+# 字符编码
+charset = utf-8
+# 缩进格式
+indent_style = space
+indent_size = 4
+# 换行格式
+end_of_line = lf
+# 在代码最后添加一行空行
+insert_final_newline = true
+# 去除行末尾多余的空白
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false

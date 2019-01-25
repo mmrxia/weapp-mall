@@ -1,0 +1,7 @@
+<view class="c-quantity">
+    <view class="btn decrement {{quantity<2 ? 'disabled' : ''}}"
+          catchtap="quantity_decrement"></view>
+    <view class="num">{{quantity}}</view>
+    <view class="btn increment {{quantityLimit && quantity >= quantityLimit ? 'disabled' :''}}"
+          catchtap="quantity_increment"></view>
+</view>

@@ -1,0 +1,56 @@
+<view class="header flex-center">
+    <view class="userInfo">
+        <view class="avatar">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="nickName">
+            <open-data type="userNickName"></open-data>
+        </view>
+    </view>
+</view>
+
+<view class="order-list">
+    <view class="order-head" data-url="/pages/order-list/index" bindtap="navigateTo">
+        <view>我的订单</view>
+        <view>
+            <view class="order-all">查看全部订单</view>
+            <view class="u-arrow right"></view>
+        </view>
+    </view>
+    <view class="order-item-wrapper flex-center">
+        <view class="order-item" data-url="/pages/order-list/index?orderType=1" bindtap="navigateTo">
+            <image class="icon" src="icons/order_pay.png" mode="widthFix"></image>
+            <view>待付款</view>
+        </view>
+        <view class="order-item" data-url="/pages/order-list/index?orderType=2" bindtap="navigateTo">
+            <image class="icon" src="icons/order_send.png" mode="widthFix"></image>
+            <view>待发货</view>
+        </view>
+        <view class="order-item" data-url="/pages/order-list/index?orderType=3" bindtap="navigateTo">
+            <image class="icon" src="icons/order_accept.png" mode="widthFix"></image>
+            <view>待收货</view>
+        </view>
+        <view class="order-item" data-url="/pages/order-list/index?orderType=4" bindtap="navigateTo">
+            <image class="icon" src="icons/order_refund.png" mode="widthFix"></image>
+            <view>退款</view>
+        </view>
+    </view>
+</view>
+
+<view class="menu-list">
+    <view class="menu-item">
+        <image class="icon icon_wechat" src="icons/icon_address.png" mode="widthFix"></image>
+        <button class="menu-title" bindtap="handleAddress" size="mini" plain>我的地址</button>
+        <view class="u-arrow right"></view>
+    </view>
+    <view class="menu-item">
+        <image class="icon icon_wechat" src="icons/icon_consultation.png" mode="widthFix"></image>
+        <button class="menu-title" open-type="contact" bindcontact="handleContact" size="mini" plain>联系客服</button>
+        <view class="u-arrow right"></view>
+    </view>
+    <view class="menu-item">
+        <image class="icon icon_wechat" src="icons/icon_phone.png" mode="widthFix"></image>
+        <button class="menu-title" bindtap="handlePhoneCall" size="mini" plain>电话咨询</button>
+        <view class="u-arrow right"></view>
+    </view>
+</view>

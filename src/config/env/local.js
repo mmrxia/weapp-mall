@@ -1,7 +1,0 @@
-/**
- * env: local
- */
-
-export default {
-
-}

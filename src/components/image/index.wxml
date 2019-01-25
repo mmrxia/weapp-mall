@@ -1,0 +1,8 @@
+<image
+    mode="{{mode}}"
+    src="{{src}}"
+    lazy-load="{{lazyload}}"
+    binderror="error"
+    bindload="loaded"
+    class="c-image {{visible ? 'visible' : ''}}"
+></image>

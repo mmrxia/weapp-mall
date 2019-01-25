@@ -1,16 +1,22 @@
 //app.js
-import WeToast from 'components/wetoast/index.js';
-import {getUserInfo} from  'utils/index';
+import ext from 'utils/ext';
+import utils from  'utils/index';
 
 //app.js
 App({
-    WeToast,
-    getUserInfo,
+    ...ext,
+    ...utils,
     onLaunch () {
-        const me = this;
-        me.getUserInfo().then(res=>{
-            console.info('getUserInfo', res)
-        });
+        try {
+            const {model, system} = wx.getSystemInfoSync();
+            this.globalData.os = /ios/gi.test(system) ? 'ios' : 'android';
+            this.globalData.isIphoneX = new RegExp('iPhone X', 'gi').test(model);
+        } catch (e) {
+            console.log(e);
+        }
     },
-    globalData: {}
+    globalData: {
+        os: 'ios',
+        isIphoneX: false,
+    }
 });

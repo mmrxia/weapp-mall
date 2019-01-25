@@ -1,3 +1,0 @@
-<view wx:for="{{pics}}">
-    <image src="{{item}}" mode="widthFix" />
-</view>

@@ -1,0 +1,53 @@
+/* btn */
+.u-btn{ display: inline-flex;align-items: center;justify-content: center; border:2rpx solid #EEEEEE; background-color:#FFF; color:#333; text-align:center; padding:10rpx 40rpx; vertical-align:middle; border-radius:10rpx;font-size:32rpx;margin: 0;white-space: nowrap;line-height: 1.44}
+.u-btn:after{content: none}
+.u-btn.checked{ border:2rpx solid #ff4d61; color: #fff;background: #ff4d61}
+/* 按钮点击状态 */
+.u-btn.checked:active{ opacity: .8;}
+/* 按钮禁止状态 */
+.u-btn.disabled{ border-color: #dcdcdc; background-color: #dcdcdc; color: #fff;}
+/* 小号按钮 */
+.u-btn.mini{ font-size: 28rpx; padding: 4rpx 45rpx; border-radius: 30rpx;}
+/* 大号按钮 */
+.u-btn.max{ font-size: 17rpx; padding: 9rpx 22rpx;}
+
+/* switch */
+.u-switch{position:relative;box-sizing:border-box;width:46px;height:24px;outline:0;border-radius:14px;background:#dfdfdf;-webkit-appearance:none;appearance:none;}
+.u-switch:before,.u-switch:after{position:absolute;top:1px;left:1px;height:22px;border-radius:15px;content:"";-webkit-transition:.3s;transition:.3s;}
+.u-switch:before{width:44px;background-color:#fdfdfd}
+.u-switch:after{width:22px;background-color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.u-switch.checked{border-color:#ff4d61;background-color:#ff4d61}
+.u-switch.checked:before{-webkit-transform:scale(0);transform:scale(0)}
+.u-switch.checked:after{-webkit-transform:translate3d(22px,0,0)}
+.u-switch.disabled{ opacity: .5;}
+
+/*tab*/
+.u-tabs{ display: flex;align-items: center; background: #FFF;font-size: 28rpx;}
+.u-tabs > view{ flex:1; text-overflow:ellipsis; white-space:nowrap; overflow: hidden; text-align: center; height: 80rpx; line-height: 80rpx;}
+.u-tabs > view.active{ color: #ff4d61; position: relative;}
+.u-tabs > view.active text{padding-bottom: 16rpx; border-bottom: 6rpx solid #ff4d61; }
+
+/* checkbox */
+.u-radio,
+.u-checkbox{ display:inline-block; vertical-align:middle; width:16px; height:16px; border:1px solid #999; background-color:#FFF; border-radius:50%; position:relative; -webkit-transition:.2s; transition:.2s;}
+.u-checkbox.checked{ background-color:#ff4d61; border-color:#ff4d61;}
+.u-checkbox.checked:before{ content:""; position:absolute; left:3px; top:3px; width:8px; height:4px; border-bottom:1px solid #FFF; border-left:1px solid #FFF; -webkit-transform:rotate(-45deg); transform:rotate(-45deg);}
+.u-checkbox:after{position:absolute;top:-8px;left:-8px;display:block;width:32px;height:32px;background-color:transparent;content:''}
+.u-radio.checked{ border-color:#ff4d61;}
+.u-radio.checked:before{ content:""; position:absolute; left:3px; top:3px; width:8px; height:8px; overflow:hidden; border-radius:50%; background-color:#ff4d61;}
+.u-radio.disabled,
+.u-checkbox.disabled{ opacity: .5;}
+
+/* arrow */
+.u-arrow{ display: inline-block;content:""; width:8px; height:8px; border:solid #999;   -webkit-transform:rotate(-45deg); transform:rotate(-45deg);}
+.u-arrow.right{ border-width:0 1px 1px 0; }
+.u-arrow.bottom{ border-width:0 0 1px 1px; margin-top:-3px;}
+.u-arrow.left{ border-width:1px 0 0 1px; }
+.u-arrow.top{ border-width:1px 1px 0 0; margin-top: 2px;}
+
+.u-triangle.up{width:0;height:0;border-right:5px solid transparent;border-bottom:6px solid #333;border-left:5px solid transparent;}
+.u-triangle.down{width:0;height:0;border-top:6px solid #333;border-right:5px solid transparent;border-left:5px solid transparent;}
+.u-triangle.left{width:0;height:0;border-top:5px solid transparent;border-right:6px solid #333;border-bottom:5px solid transparent;}
+.u-triangle.right{width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:6px solid #333;}
+.u-triangle.topright{width:0;height:0;border-top:5px solid #333;border-left:5px solid transparent;}
+

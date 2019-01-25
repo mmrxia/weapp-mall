@@ -1,12 +1,16 @@
-<template name="dialog">
-    <view class="dialog {{ showDialog ? 'dialog_show' : '' }}">
-        <view class="dialog__mask" bindtap="closeDialog" />
-        <view class="dialog__container">
-            <view wx:if="{{title}}" class="dialog__hd">{{title}}</view>
-            <view class="dialog__bd">{{content}}</view>
-            <view class="dialog__ft">
-                <button class="u-btn success" bindtap="closeDialog">关闭</button>
-            </view>
-        </view>
+<view class="dialog {{className}} {{ show ? 'dialog_show' : '' }}">
+
+    <!--遮罩-->
+    <view class="dialog__mask" catchtap="hide"/>
+
+    <!--container-->
+    <view class="dialog__container">
+        <!--右上角关闭按钮-->
+        <image class="close" catchtap="hide" src="icons/icon_close.png"></image>
+        <slot></slot>
     </view>
-</template>
+</view>
+
+
+
+

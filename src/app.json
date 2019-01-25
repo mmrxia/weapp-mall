@@ -1,51 +1,63 @@
 {
-  "pages":[
-    "pages/store/index",
-    "pages/store-index/index",
-
-    "pages/demo/index",
-
-    "pages/category/index",
-    "pages/goods-list/index",
-    "pages/goods-detail/index",
-    "pages/goods-qc-report/index",
-    "pages/cart/index",
-    "pages/user/index",
-    "pages/login/index"
-  ],
-  "window":{
-    "backgroundTextStyle":"white",
-    "navigationBarBackgroundColor": "#FAFAFA",
-    "navigationBarTitleText": "微商城",
-    "navigationBarTextStyle":"black",
-    "backgroundColor": "#F2f2f2"
-  },
-  "tabBar": {
-    "color": "#777",
-    "selectedColor": "#FF4D61",
-    "borderStyle": "black",
-    "backgroundColor": "#FAFAFA",
-    "list": [{
-      "pagePath": "pages/store/index",
-      "iconPath": "images/tabbar/mmhtab_icon_mmh_n@2x.png",
-      "selectedIconPath": "images/tabbar/mmhtab_icon_mmh_s@2x.png",
-      "text": "门店购"
-    }, {
-      "pagePath": "pages/category/index",
-      "iconPath": "images/tabbar/mmhtab_icon_fl_n@2x.png",
-      "selectedIconPath": "images/tabbar/mmhtab_icon_fl_s@2x.png",
-      "text": "分类"
-    },{
-      "pagePath": "pages/cart/index",
-      "iconPath": "images/tabbar/mmhtab_icon_gwc_n@2x.png",
-      "selectedIconPath": "images/tabbar/mmhtab_icon_gwc_s@2x.png",
-      "text": "购物车"
-    }, {
-      "pagePath": "pages/user/index",
-      "iconPath": "images/tabbar/mmhtab_icon_me_n@2x.png",
-      "selectedIconPath": "images/tabbar/mmhtab_icon_me_s@2x.png",
-      "text": "我"
-    }]
-  },
-  "debug": true
+    "pages": [
+        "pages/index/index",
+        "pages/category/index",
+        "pages/cart/index",
+        "pages/my/index"
+    ],
+    "subpackages":[
+        {
+            "root": "subPages",
+            "name": "subpackages",
+            "pages": [
+                "demo/index",
+                "goods/detail/index",
+                "slide-delete/index"
+            ]
+        }
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "white",
+        "navigationBarTitleText": "小程序商城",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "white"
+    },
+    "tabBar": {
+        "color": "#777",
+        "selectedColor": "#BA0000",
+        "borderStyle": "black",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "images/tabbar/index.png",
+                "selectedIconPath": "images/tabbar/index_active.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/category/index",
+                "iconPath": "images/tabbar/category.png",
+                "selectedIconPath": "images/tabbar/category_active.png",
+                "text": "分类"
+            },
+            {
+                "pagePath": "pages/cart/index",
+                "iconPath": "images/tabbar/cart.png",
+                "selectedIconPath": "images/tabbar/cart_active.png",
+                "text": "购物车"
+            },
+            {
+                "pagePath": "pages/my/index",
+                "iconPath": "images/tabbar/my.png",
+                "selectedIconPath": "images/tabbar/my_active.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "usingComponents": {
+        "component-modal": "./components/modal/index",
+        "component-dialog": "./components/dialog/index",
+        "component-image": "./components/image/index"
+    }
 }

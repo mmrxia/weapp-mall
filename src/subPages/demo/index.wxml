@@ -1,0 +1,43 @@
+<view class="list">
+    <view class="item item-quantity">
+        <view class="item-title">数量加减组件</view>
+        <view class="item-content">
+            <component-quantity bind:change="onQuantityChange"></component-quantity>
+        </view>
+    </view>
+    <view class="item item-slide-menu">
+        <view class="item-title">侧滑菜单</view>
+        <view class="item-content">
+            <component-slide-menu class="slide-menu-wrapper" wx:for="{{slideMenu.list}}" wx:key="{{item.id}}" data-item="{{item}}" bind:delete="onDelete">
+                <view class="title">{{item.title}}</view>
+            </component-slide-menu>
+        </view>
+    </view>
+    <view class="item item-modal">
+        <view class="item-title">modal</view>
+        <view class="item-content">
+            <button class="u-btn btn-modal" bindtap="modalShow">点击显示</button>
+            <component-modal id="modal"></component-modal>
+        </view>
+    </view>
+    <view class="item item-dialog">
+        <view class="item-title">dialog</view>
+        <view class="item-content">
+            <button class="u-btn btn-dialog" bindtap="dialogShow">点击显示</button>
+            <component-dialog id="dialog">
+                <view class="title">这是dialog标题</view>
+                <view class="content">这是dialog内容</view>
+                <view class="btn-confirm" catchtap="dialogConfirm">确定</view>
+            </component-dialog>
+        </view>
+    </view>
+    <view class="item item-image">
+        <view class="item-title">item-image</view>
+        <view class="item-content">
+            <view class="image-wrap">
+                <component-image src="//img12.360buyimg.com/n1/s450x450_jfs/t1/7211/16/8954/485449/5c1088ecE9884e066/542088e742e6169c.jpg" mode="widthFix"></component-image>
+                <component-marquee id="marquee" bind:tap="onMarqueeTap"></component-marquee>
+            </view>
+        </view>
+    </view>
+</view>

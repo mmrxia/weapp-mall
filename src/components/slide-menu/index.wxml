@@ -1,0 +1,9 @@
+<!--侧滑菜单-->
+<view class="c-slide-menu" animation='{{wrapAnimation}}' style="height: {{height}}rpx">
+    <view class='slide-content' animation='{{animation}}' catchtouchstart='ontouchstart' catchtouchmove='ontouchmove' catchtouchend='ontouchend'>
+        <slot></slot>
+    </view>
+    <view class='slide-option'>
+        <view class='menu-delete' catchtap='onSlideMenuDelete'>删除</view>
+    </view>
+</view>

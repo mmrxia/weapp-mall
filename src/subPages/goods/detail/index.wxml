@@ -1,0 +1,38 @@
+<swiper class="goods-banner" autoplay interval="4000"
+        duration="400" indicator-dots="true" circular="true" indicator-color="rgba(255,255,255,.6)"
+        indicator-active-color="#ff4d61">
+    <swiper-item wx:for="{{goodsBanner}}" wx:key="{{item}}" class="swiper-item">
+        <component-image src="{{item}}" mode="scaleToFill"></component-image>
+    </swiper-item>
+</swiper>
+
+<view class="goods-info">
+    <view class="title">
+        <text class="label">自营</text>
+        <text class="label green">新品</text>
+        <text class="text">SK-II新年神仙水230ml补水保湿护肤套装( 礼赠清莹露+洁面霜 面部护肤 精华液）</text>
+    </view>
+    <view class="sub-title">限时享446元5件礼！新年限量版神仙水，全网限量发售！12期免息，约¥121/期！</view>
+    <view class="price">
+        <view class="c-price"><text>¥</text><text class="val">1040</text><text>.00</text></view>
+        <view class="o-price"><text>¥</text><text class="val">1351</text><text>.00</text></view>
+    </view>
+</view>
+
+<view class="footer">
+    <navigator open-type="switchTab" url="/pages/cart/index" hover-class="none" class="btn-icon">
+        <view class="btn btn-cart">
+            <image class="icon" src="./icons/icon-cart.png"></image>
+            <view>购物车</view>
+        </view>
+    </navigator>
+    <view class="btn-option">
+        <view class="btn btn-cart" catchtap="addCart">加入购物车</view>
+        <view class="btn btn-buy" catchtap="buyGoods">立即购买</view>
+    </view>
+</view>
+
+<!-- sku -->
+<component-dialog id="dialog_sku">
+    <component-sku bind:confirm="sku_confirm" bind:ready="sku_init" info="{{}}"></component-sku>
+</component-dialog>

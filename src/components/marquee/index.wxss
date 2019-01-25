@@ -1,0 +1,6 @@
+.c-marquee{width: 60vw;}
+.c-marquee .marquee-item{display:flex;height: 62rpx;padding-right: 20rpx;align-items:center;background: rgba(0,0,0,0.6);color: #FFF;border-radius: 6rpx;font-size: 24rpx;overflow: hidden}
+.c-marquee .marquee-item .avatar{flex:none;width: 62rpx;height: 62rpx;margin-right: 16rpx}
+.c-marquee .marquee-item .content{flex:1;padding: 15rpx 0;text-overflow: ellipsis;overflow: hidden;white-space: nowrap}
+.c-arrow{ width:16rpx; height:16rpx; border:solid #fff;transform:rotate(-45deg);}
+.c-arrow.right{ border-width:0 1rpx 1rpx 0; }

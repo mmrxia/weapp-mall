@@ -1,11 +1,11 @@
+import regeneratorRuntime from '../../libs/regenerator-runtime';
+import cfg from '../../config/index';
+const app = getApp();
 Page({
-    onLoad (){
-        wx.showLoading({
-            title: '加载中',
-        })
+    data: {
+        userInfo: {},
+    },
+    onLoad() {
 
-        setTimeout(function(){
-            wx.hideLoading()
-        },5000)
     }
-})
+});
