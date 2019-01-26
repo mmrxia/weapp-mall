@@ -24,7 +24,7 @@
 
 另外，考虑到项目开源后，开发者能快速修改迭代，后期会将接口api拆分到独立文件中进行配置，依照文档规范本地存放模拟数据。
 
-下面是项目代码目录：
+项目目录：
 
 ```
 .
@@ -121,6 +121,31 @@ body p {
 **`静态资源`**
 + 通过gulp sftp，一键上传静态资源到FTP或CDN
 + 定义api接口文档规范，配置mock数据
+
+#### 使用
+1. 安装gulp4环境
+
+```bash
+npm install gulp-cli -g
+npm install gulp@4 -D
+```
+
+2. 安装package.json中的依赖包
+
+```bash
+npm i
+```
+
+3. 启动编译   
+可复制config.js并重命名为config.custom.js，然后根据个人实际需求改写相关配置信息（css预编译器、ftp服务器上传等）。   
+接下来打开Terminal，运行如下命令：
+
+```bash
+gulp
+```
+
+4. 预览效果   
+使用开发者工具打开编译后的`dist`目录即可。使用第三方编辑器（WebStorm/VsCode等）编辑`src`目录下的文件，保存修改，后台gulp进程会实时编译到`dist`目录。此时微信web开发者工具会自动编译刷新，预览开发效果。
 
 
 #### Q&A
