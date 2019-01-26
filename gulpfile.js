@@ -16,14 +16,19 @@ const gulp = require('gulp'),
     sass = require('gulp-sass'),
     rename = require('gulp-rename'),
     gutil = require('gulp-util'),
-    sftp = require('gulp-sftp');
+    sftp = require('gulp-sftp'),
+    plumber = require('gulp-plumber');
 
 /*===== 获取用户配置文件，可修改 ====*/
 let config;
 try {
-    config = require('./config.js');
+    config = require('./config.custom.js'); // 获取用户配置
 } catch (e) {
-    log(gutil.colors.red('丢失配置文件config.js'));
+    try {
+        config = require('./config.js');    //默认配置
+    } catch (e) {
+        log(gutil.colors.red('丢失配置文件(config.js/config.custom.js)'));
+    }
 }
 
 /*===== 相关路径配置 ====*/
@@ -66,6 +71,7 @@ function compileCSS(file) {
     let files = typeof file === 'string' ? file : paths.src.cssFiles;
     return gulp.src(files)
         .pipe(gulpif(/less/i.test(config.cssCompiler), less(), sass()))
+        .pipe(plumber())
         .pipe(replace(/(-?\d+(\.\d+)?)px/gi, function (m, num) {
             return 2 * num + 'rpx'; //替换1px为2rpx， 0.5px为1rpx
         }))

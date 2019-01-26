@@ -59,12 +59,66 @@
 ```
 
 本项目特性：   
-基于Gulp 4.0开发，开发者工具引入`dist`目录，开发时使用`src`目录。
-    
-+ 全面使用es6语法，支持async/await
+> 基于Gulp 4.0开发，实时监控文件变化，高效编译。 可作为小程序快速开发整体解决方案使用。
+1. 开发时使用`src`目录，建议使用WebStorm、VSCode编辑器，开启实时保存功能
+2. 开发者工具引入`dist`目录，作为预览、调试工具
+3. 如果有双屏显示器，开发起来完全爽的不要不要的~~
+
+`.WXML`:
 + 封装通用组件，如modal、dialog、sku、侧滑删除、数量增减、图片fadeIn、marquee等
++ `@assets`关键字一键替换为`CDN`对应的`https`路径
+
+```html
+<!--input-->
+<image src="@assets/test.png"></image>
+
+<!--output-->
+<image src="https://cdn.aliyun.cn/test.png"></image>
+```
+
+
+`.JS`:
++ 全面使用es6语法，支持async/await
++ 可修改配置，支持`TypeScript`、`Coffee`编写
+
+```javascript
+function sleep(t) {
+  return new Promise(resolve => {
+    setTimeout(resolve, t || 10)
+  })
+}
+
+async function fn() {
+  await sleep(200);
+}
+```
+
+`.WXSS`
 + iphone6尺寸作为标准设计稿，使用px作为css编写单位，自动转换为rpx
-+ 使用less、sass（需要改配置）编写样式
++ 可选择使用less、sass/scss编写样式
+
+```less
+/* input */
+@red: #ff4d61;
+body{
+    padding: 20px .5px 2rpx 8.5px;
+    p{
+        color: @red;
+    }
+}
+```
+
+```css
+/* output */
+body {
+  padding: 40rpx 1rpx 2rpx 17rpx;
+}
+body p {
+  color: #ff4d61;
+}
+```
+
+`静态资源`
 + 通过gulp sftp，一键上传静态资源到FTP或CDN
 + 定义api接口文档规范，配置mock数据
 
