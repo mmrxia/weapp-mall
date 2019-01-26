@@ -1,8 +1,8 @@
-## 微信小程序电商系统
+### 微信小程序电商系统
 > 本开源项目旨在根据如今流行的电商app作为参考，开发出一套基础功能完善的小程序电商系统，帮助中小电商企业能够快速引流和推广使用。
 > 还可以为广大的前端开发工程师、小程序开发者快速迭代出公司需要的电商项目。
 
-### 小程序功能
+#### 小程序功能
 
 + 首页
 + 分类
@@ -14,7 +14,7 @@
 + 订单
 + 收货地址（使用微信官方模块）
 
-### 项目结构设计
+#### 项目结构
 
 现今已有很多基于webpack打包进行开发的小程序开发框架，比较知名的有美团小程序框架[mpvue](https://github.com/Meituan-Dianping/mpvue)和腾讯开源的[wepy](https://github.com/Tencent/wepy)。
 
@@ -58,13 +58,13 @@
 
 ```
 
-本项目特性：   
+**本项目特性：**   
 > 基于Gulp 4.0开发，实时监控文件变化，高效编译。 可作为小程序快速开发整体解决方案使用。
 1. 开发时使用`src`目录，建议使用WebStorm、VSCode编辑器，开启实时保存功能
 2. 开发者工具引入`dist`目录，作为预览、调试工具
 3. 如果有双屏显示器，开发起来完全爽的不要不要的~~
 
-`.WXML`:
+**`.WXML`**
 + 封装通用组件，如modal、dialog、sku、侧滑删除、数量增减、图片fadeIn、marquee等
 + `@assets`关键字一键替换为`CDN`对应的`https`路径
 
@@ -77,7 +77,7 @@
 ```
 
 
-`.JS`:
+**`.JS`**
 + 全面使用es6语法，支持async/await
 + 可修改配置，支持`TypeScript`、`Coffee`编写
 
@@ -93,7 +93,7 @@ async function fn() {
 }
 ```
 
-`.WXSS`
+**`.WXSS`**
 + iphone6尺寸作为标准设计稿，使用px作为css编写单位，自动转换为rpx
 + 可选择使用less、sass/scss编写样式
 
@@ -118,12 +118,18 @@ body p {
 }
 ```
 
-`静态资源`
+**`静态资源`**
 + 通过gulp sftp，一键上传静态资源到FTP或CDN
 + 定义api接口文档规范，配置mock数据
 
 
+#### Q&A
++ Q:**为什么gulp打包中没有AutoPrefixer、babel转ES6功能？**  
+  A: 微信开发者工具的“设置-项目设置”中已经提供了这些功能；
+
++ Q:**src/assets目录会被编译到dist目录吗？**  
+  A: assets目录是要上传到ftp/cdn的静态资源文件，不会被编译到dist目录；
+
 #### 开发必备
 1 . [微信开发者工具下载](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)
-   
 2 . [小程序开发参考文档](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html)
