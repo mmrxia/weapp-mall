@@ -70,7 +70,7 @@ function copyFiles(file) {
 function compileCSS(file) {
     let files = typeof file === 'string' ? file : paths.src.cssFiles;
     return gulp.src(files)
-        .pipe(gulpif(/less/i.test(config.cssCompiler), less(), sass()))
+        .pipe(gulpif('less' === config.cssCompiler, less(), sass()))
         .pipe(plumber())
         .pipe(replace(/(-?\d+(\.\d+)?)px/gi, function (m, num) {
             return 2 * num + 'rpx'; //替换1px为2rpx， 0.5px为1rpx
@@ -102,12 +102,12 @@ function watchHandler(event, file) {
     let ext_name = path.extname(file);
     if (event === 'unlink') {
         let tmp = replaceDir(file);
-        if (/.(less|sass|scss)/i.test(ext_name)) {
+        if (/.(less|sass|scss)$/i.test(ext_name)) {
             tmp = tmp.replace(ext_name, '.wxss');
         }
         del(tmp);
     } else {
-        if (/.(less|sass|scss)/i.test(ext_name)) {
+        if (/.(less|sass|scss)$/i.test(ext_name)) {
             compileCSS(file);  // 样式 文件
         } else if (ext_name === '.wxml') {
             copyWXML(file); // wxml 文件
