@@ -1,15 +1,13 @@
 /* btn */
-.u-btn{ display: inline-flex;align-items: center;justify-content: center; border:2rpx solid #EEEEEE; background-color:#FFF; color:#333; text-align:center; padding:10rpx 40rpx; vertical-align:middle; border-radius:10rpx;font-size:32rpx;margin: 0;white-space: nowrap;line-height: 1.44}
+.u-btn{ display: inline-flex;align-items: center;justify-content: center; border:1px solid #EEEEEE; background-color:#FFF; color:#333; text-align:center; padding:5px 20px; vertical-align:middle; border-radius:5px;font-size:16px;margin: 0;white-space: nowrap;line-height: 1.44}
 .u-btn:after{content: none}
-.u-btn.checked{ border:2rpx solid #ff4d61; color: #fff;background: #ff4d61}
+.u-btn.checked{ border:1px solid #ff4d61; color: #fff;background: #ff4d61}
 /* 按钮点击状态 */
 .u-btn.checked:active{ opacity: .8;}
 /* 按钮禁止状态 */
 .u-btn.disabled{ border-color: #dcdcdc; background-color: #dcdcdc; color: #fff;}
 /* 小号按钮 */
-.u-btn.mini{ font-size: 28rpx; padding: 4rpx 45rpx; border-radius: 30rpx;}
-/* 大号按钮 */
-.u-btn.max{ font-size: 17rpx; padding: 9rpx 22rpx;}
+.u-btn.mini{ font-size: 14px; padding: 2px 22px; border-radius: 15px;}
 
 /* switch */
 .u-switch{position:relative;box-sizing:border-box;width:46px;height:24px;outline:0;border-radius:14px;background:#dfdfdf;-webkit-appearance:none;appearance:none;}
@@ -17,15 +15,15 @@
 .u-switch:before{width:44px;background-color:#fdfdfd}
 .u-switch:after{width:22px;background-color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.4)}
 .u-switch.checked{border-color:#ff4d61;background-color:#ff4d61}
-.u-switch.checked:before{-webkit-transform:scale(0);transform:scale(0)}
-.u-switch.checked:after{-webkit-transform:translate3d(22px,0,0)}
+.u-switch.checked:before{transform:scale(0)}
+.u-switch.checked:after{transform:translate3d(22px,0,0)}
 .u-switch.disabled{ opacity: .5;}
 
 /*tab*/
-.u-tabs{ display: flex;align-items: center; background: #FFF;font-size: 28rpx;}
-.u-tabs > view{ flex:1; text-overflow:ellipsis; white-space:nowrap; overflow: hidden; text-align: center; height: 80rpx; line-height: 80rpx;}
+.u-tabs{ display: flex;align-items: center; background: #FFF;font-size: 14px;}
+.u-tabs > view{ flex:1; text-overflow:ellipsis; white-space:nowrap; overflow: hidden; text-align: center; height: 40px; line-height: 40px;}
 .u-tabs > view.active{ color: #ff4d61; position: relative;}
-.u-tabs > view.active text{padding-bottom: 16rpx; border-bottom: 6rpx solid #ff4d61; }
+.u-tabs > view.active text{padding-bottom: 8px; border-bottom: 3px solid #ff4d61; }
 
 /* checkbox */
 .u-radio,
