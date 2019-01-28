@@ -61,8 +61,16 @@
 3. 如果有双屏显示器，开发起来完全爽的不要不要的~~
 
 **`.WXML`**
-+ 封装通用组件，如modal、dialog、sku、侧滑删除、数量增减、图片fadeIn、marquee等
 + `@assets`关键字一键替换为`CDN`对应的`https`路径
++ 封装通用组件
+    - [x] modal （模态框、confirm、alert）
+    - [x] dialog （对话框）
+    - [x] slide-menu （侧滑删除）
+    - [x] quantity （数量增减）
+    - [x] image （图片加载完fadeIn）
+    - [x] marquee （跑马灯效果）
+    - [ ] sku （商品sku选择）
+    - [ ] num-roll （数值滚动）
 
 ```html
 <!--input-->
@@ -133,7 +141,20 @@ npm i
 ```
 
 3. 启动编译   
-可复制config.js并重命名为config.custom.js，然后根据个人实际需求改写相关配置信息（css预编译器、ftp服务器上传等）。   
+可复制config.js并重命名为config.custom.js，然后根据个人实际需求改写相关配置信息（css预编译器、ftp服务器上传等）。 
+    ```javascript
+    module.exports = {
+        cssCompiler: 'less',
+        assetsPath: 'https://cdn.aliyun.cn',
+        ftp: {
+            host: '',
+            port: 20021,
+            user: 'root',
+            pass: 'password',
+            remotePath: ''
+        }
+    };
+    ```  
 接下来打开Terminal，运行如下命令：
 
 ```bash
@@ -150,7 +171,26 @@ gulp
 
 + Q:**src/assets目录会被编译到dist目录吗？**  
   A: assets目录是要上传到ftp/cdn的静态资源文件，不会被编译到dist目录；
+  
++ Q:**是否可以使用npm run dev命令进行开发？**  
+  A: 可以。package.json文件中scripts选项新增即可；
+    ```json
+    {
+        "scripts": {
+            "dev": "gulp"
+        }
+    }
+```
 
 ### 开发必备
 1. [微信开发者工具下载](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)
 2. [小程序开发参考文档](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html)
+
+### todo
+- [x] 基于gulp4完成小程序开发工作流
+- [ ] 完善API接口规范文档及模拟数据
+- [ ] Less重写.wxss
+- [ ] 增加单元测试
+
+### 建议反馈
+如果有功能建议或者意见反馈，欢迎创建 `Issue` 或发送 `Pull Request`，感谢你的贡献和支持。
