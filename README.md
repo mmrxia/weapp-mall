@@ -174,11 +174,11 @@ gulp
 + Q:**是否可以使用npm run dev命令进行开发？**  
   A: 可以。package.json文件中scripts选项新增即可；
     ```json
-        {
-            "scripts": {
-                "dev": "gulp"
-            }
+    {
+        "scripts": {
+            "dev": "gulp"
         }
+    }
     ```
 
 ### Todo
