@@ -1,25 +1,56 @@
-<view class="app">
-    <view class="search-bar">
-        <view class="input flex-center">
-            <icon class="icon-search" type="search" color="#FFF" size="12"></icon>
-            <text>输入商品名称或关键字</text>
-        </view>
+<view class="search-bar">
+    <view class="input flex-center">
+        <icon class="icon-search" type="search" color="#FFF" size="12"></icon>
+        <text>输入商品名称或关键字</text>
     </view>
-    <scroll-view class="navbar"  scroll-x scroll-with-animation scroll-left="{{scrollLeft}}">
-        <view class="item {{currIndex === index ? 'active' : ''}}" wx:for="{{navItem}}" id="{{item.id}}" bindtap="changeNav" data-index="{{index}}">
-            <view class="item-txt">{{item.name}}</view>
-        </view>
-    </scroll-view>
+</view>
+<scroll-view class="navbar"  scroll-x scroll-with-animation scroll-left="{{scrollLeft}}">
+    <view class="item {{currIndex === index ? 'active' : ''}}" wx:for="{{navItem}}" id="{{item.id}}" bindtap="changeNav" data-index="{{index}}">
+        <view class="item-txt">{{item.name}}</view>
+    </view>
+</scroll-view>
 
-    <view class="container">
-        <swiper class="banner" autoplay interval="4000"
-                duration="400" indicator-dots="true" circular="true" indicator-color="rgba(255,255,255,.6)"
-                indicator-active-color="#ff4d61">
-            <swiper-item wx:for="{{banner}}" wx:key="{{item}}">
-                <navigator url="/subPages/goods/detail/index" class="swiper-item" hover-class="none">
-                    <component-image src="{{item}}" mode="scaleToFill"></component-image>
-                </navigator>
-            </swiper-item>
-        </swiper>
+<view class="container">
+    <swiper class="banner" autoplay interval="4000"
+            duration="400" indicator-dots="true" circular="true" indicator-color="rgba(255,255,255,.6)"
+            indicator-active-color="#ff4d61">
+        <swiper-item wx:for="{{banner}}" wx:key="{{item}}">
+            <navigator url="/subPages/goods/detail/index" class="swiper-item" hover-class="none">
+                <component-image src="{{item}}" mode="scaleToFill"></component-image>
+            </navigator>
+        </swiper-item>
+    </swiper>
+
+    <view class="goods-list">
+        <navigator url="/subPages/goods/detail/index" class="goods-item" hover-class="none">
+            <view class="pic">
+                <component-image src="//img14.360buyimg.com/mobilecms/s372x372_jfs/t27259/211/1654431032/271251/fdcccf0f/5bea2c6dNa52b08d6.jpg!q70.dpg" mode="scaleToFill"></component-image>
+            </view>
+            <view class="info">
+                <view class="title">斐乐FILA 2019 FUSION系列潮牌双肩背包春季新款书包运动休闲男女同款背包 传奇蓝-NV XS</view>
+                <view class="sub-title">传奇蓝-NV XS</view>
+                <view class="price">¥439.00</view>
+            </view>
+        </navigator>
+        <navigator url="/subPages/goods/detail/index" class="goods-item" hover-class="none">
+            <view class="pic">
+                <component-image src="//img14.360buyimg.com/mobilecms/s372x372_jfs/t27259/211/1654431032/271251/fdcccf0f/5bea2c6dNa52b08d6.jpg!q70.dpg" mode="scaleToFill"></component-image>
+            </view>
+            <view class="info">
+                <view class="title">斐乐FILA 2019 FUSION系列潮牌双肩背包春季新款书包运动休闲男女同款背包 传奇蓝-NV XS</view>
+                <view class="sub-title">传奇蓝-NV XS</view>
+                <view class="price">¥439.00</view>
+            </view>
+        </navigator>
+        <navigator url="/subPages/goods/detail/index" class="goods-item" hover-class="none">
+            <view class="pic">
+                <component-image src="//img14.360buyimg.com/mobilecms/s372x372_jfs/t27259/211/1654431032/271251/fdcccf0f/5bea2c6dNa52b08d6.jpg!q70.dpg" mode="scaleToFill"></component-image>
+            </view>
+            <view class="info">
+                <view class="title">斐乐FILA 2019 FUSION系列潮牌双肩背包春季新款书包运动休闲男女同款背包 传奇蓝-NV XS</view>
+                <view class="sub-title">传奇蓝-NV XS</view>
+                <view class="price">¥439.00</view>
+            </view>
+        </navigator>
     </view>
 </view>
