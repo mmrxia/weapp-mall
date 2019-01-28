@@ -61,7 +61,6 @@
 3. 如果有双屏显示器，开发起来完全爽的不要不要的~~
 
 **`.WXML`**
-+ `@assets`关键字一键替换为`CDN`对应的`https`路径
 + 封装通用组件
     - [x] modal （模态框、confirm、alert）
     - [x] dialog （对话框）
@@ -71,14 +70,14 @@
     - [x] marquee （跑马灯效果）
     - [ ] sku （商品sku选择）
     - [ ] num-roll （数值滚动）
-
-```html
-<!--input-->
-<image src="@assets/test.png"></image>
-
-<!--output-->
-<image src="https://cdn.aliyun.cn/test.png"></image>
-```
++ `@assets`关键字一键替换为`CDN`对应的`https`路径
+    ```html
+    <!--input-->
+    <image src="@assets/test.png"></image>
+    
+    <!--output-->
+    <image src="https://cdn.aliyun.cn/test.png"></image>
+    ```
 
 
 **`.JS`**
@@ -175,22 +174,22 @@ gulp
 + Q:**是否可以使用npm run dev命令进行开发？**  
   A: 可以。package.json文件中scripts选项新增即可；
     ```json
-    {
-        "scripts": {
-            "dev": "gulp"
+        {
+            "scripts": {
+                "dev": "gulp"
+            }
         }
-    }
-```
+    ```
 
-### 开发必备
-1. [微信开发者工具下载](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)
-2. [小程序开发参考文档](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html)
-
-### todo
+### Todo
 - [x] 基于gulp4完成小程序开发工作流
 - [ ] 完善API接口规范文档及模拟数据
 - [ ] Less重写.wxss
 - [ ] 增加单元测试
+
+### 开发必备
+1. [微信开发者工具下载](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)
+2. [小程序开发参考文档](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html)
 
 ### 建议反馈
 如果有功能建议或者意见反馈，欢迎创建 `Issue` 或发送 `Pull Request`，感谢你的贡献和支持。
