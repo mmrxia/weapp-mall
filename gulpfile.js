@@ -62,14 +62,14 @@ function removeFiles() {
 // 复制文件
 function copyFiles(file) {
     let files = typeof file === 'string' ? file : paths.src.baseFiles;
-    return gulp.src(files)
+    return gulp.src(files, {allowEmpty: true})
         .pipe(gulp.dest(paths.dist.baseDir));
 }
 
 // 编译.less/.sass/.scss
 function compileCSS(file) {
     let files = typeof file === 'string' ? file : paths.src.cssFiles;
-    return gulp.src(files)
+    return gulp.src(files, {allowEmpty: true})
         .pipe(gulpif('less' === config.cssCompiler, less(), sass()))
         .pipe(plumber())
         .pipe(replace(/(-?\d+(\.\d+)?)px/gi, function (m, num) {
@@ -84,7 +84,7 @@ function compileCSS(file) {
 // 复制.wxml
 function copyWXML(file) {
     let files = typeof file === 'string' ? file : paths.src.wxmlFiles;
-    return gulp.src(files)
+    return gulp.src(files, {allowEmpty: true})
         .pipe(gulpif(!!config.assetsPath, replace('@assets', config.assetsPath)))
         .pipe(gulp.dest(paths.dist.baseDir));
 }
