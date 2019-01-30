@@ -70,8 +70,8 @@ function copyFiles(file) {
 function compileCSS(file) {
     let files = typeof file === 'string' ? file : paths.src.cssFiles;
     return gulp.src(files, {allowEmpty: true})
-        .pipe(gulpif('less' === config.cssCompiler, less(), sass()))
         .pipe(plumber())
+        .pipe(gulpif('less' === config.cssCompiler, less(), sass()))
         .pipe(replace(/(-?\d+(\.\d+)?)px/gi, function (m, num) {
             return 2 * num + 'rpx'; //替换1px为2rpx， 0.5px为1rpx
         }))
