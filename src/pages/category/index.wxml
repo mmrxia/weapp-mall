@@ -1,1 +1,110 @@
-<view>分类</view>
+<view class="app">
+    <scroll-view scroll-y class="item-list">
+        <view class="item active">推荐分类</view>
+        <view class="item">国际名牌</view>
+        <view class="item">奢侈品</view>
+        <view class="item">内衣配饰</view>
+        <view class="item">箱包手袋</view>
+        <view class="item">美妆护肤</view>
+        <view class="item">个护清洁</view>
+        <view class="item">钟表珠宝</view>
+        <view class="item">手机数码</view>
+        <view class="item">电脑办公</view>
+        <view class="item">家用电器</view>
+        <view class="item">食品生鲜</view>
+        <view class="item">酒水饮料</view>
+        <view class="item">母婴童装</view>
+        <view class="item">玩具乐器</view>
+        <view class="item">医药保健</view>
+    </scroll-view>
+    <scroll-view scroll-y class="item-content">
+        <view class="group">
+            <view class="group-title">热门分类</view>
+            <view class="group-list">
+                <view class="item">
+                    <view class="icon">
+                        <component-image src="//img14.360buyimg.com/focus/s140x140_jfs/t27136/183/1628977274/31007/a6f7ed55/5be6ebd8Nb07ef492.png"></component-image>
+                    </view>
+                    <view class="title">手机</view>
+                </view>
+                <view class="item">
+                    <view class="icon">
+                        <component-image src="//img30.360buyimg.com/focus/s140x140_jfs/t1/1446/14/631/8500/5b9237e5E0d1f9e16/b1a627b92323b5ed.png"></component-image>
+                    </view>
+                    <view class="title">华为</view>
+                </view>
+                <view class="item">
+                    <view class="icon">
+                        <component-image src="//img10.360buyimg.com/focus/s140x140_jfs/t1/28793/2/4042/4059/5c2efe4dEee11fd60/12d857b6b872d978.png"></component-image>
+                    </view>
+                    <view class="title">充电宝</view>
+                </view>
+                <view class="item">
+                    <view class="icon">
+                        <component-image src="//img10.360buyimg.com/focus/s140x140_jfs/t1/16292/38/6110/13890/5c491d05Ec609c157/72d7d4ce45a1084d.png"></component-image>
+                    </view>
+                    <view class="title">蓝牙耳机</view>
+                </view>
+                <view class="item">
+                    <view class="icon">
+                        <component-image src="//img14.360buyimg.com/focus/s140x140_jfs/t1/25797/33/6193/23042/5c491d12E7ddf9c36/402d45bbfc8ebfa8.png"></component-image>
+                    </view>
+                    <view class="title">苹果</view>
+                </view>
+                <view class="item">
+                    <view class="icon">
+                        <component-image src="//img11.360buyimg.com/focus/s140x140_jfs/t1/26726/8/6238/33717/5c491d19E25e9e817/21dc885258ac3dae.png"></component-image>
+                    </view>
+                    <view class="title">茶叶</view>
+                </view>
+                <view class="item">
+                    <view class="icon">
+                        <component-image src="//img12.360buyimg.com/focus/s140x140_jfs/t1/25144/37/2370/7617/5c1cae45Ea0ec5a85/f7ba433b5d1e072f.png"></component-image>
+                    </view>
+                    <view class="title">吹风机</view>
+                </view>
+                <view class="item">
+                    <view class="icon">
+                        <component-image src="//img14.360buyimg.com/focus/s140x140_jfs/t1/18807/24/6057/18778/5c491d2bEf74819da/3b35c47e1b95dd5e.png"></component-image>
+                    </view>
+                    <view class="title">大米</view>
+                </view>
+                <view class="item">
+                    <view class="icon">
+                        <component-image src="//img14.360buyimg.com/focus/s140x140_jfs/t27400/283/1600620667/15106/a935e7bd/5be6f2e1Nfa8d9d6e.png"></component-image>
+                    </view>
+                    <view class="title">路由器</view>
+                </view>
+                <view class="item">
+                    <view class="icon">
+                        <component-image src="//img10.360buyimg.com/focus/s140x140_jfs/t1/10663/14/9708/9518/5c491d0bE7bea8c29/a24767d7865e4815.png"></component-image>
+                    </view>
+                    <view class="title">保温杯</view>
+                </view>
+            </view>
+        </view>
+        <view class="group">
+            <view class="group-title">家电热搜</view>
+            <view class="group-list">
+                <view class="item">
+                    <view class="icon">
+                        <component-image src="//img20.360buyimg.com/focus/s140x140_jfs/t21115/83/225125274/13856/5473fb3f/5b0567c1N59d53b27.png"></component-image>
+                    </view>
+                    <view class="title">冰箱</view>
+                </view>
+                <view class="item">
+                    <view class="icon">
+                        <component-image src="//img14.360buyimg.com/focus/s140x140_jfs/t21664/15/237213959/24996/a3c6c7d6/5b0567c7N9cc1c355.png"></component-image>
+                    </view>
+                    <view class="title">洗衣机</view>
+                </view>
+                <view class="item">
+                    <view class="icon">
+                        <component-image src="//img12.360buyimg.com/focus/s140x140_jfs/t18106/218/2672347202/29951/3618e960/5b0567cdN275fbcdd.png"></component-image>
+                    </view>
+                    <view class="title">电视</view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
