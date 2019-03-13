@@ -7,13 +7,16 @@
     ],
     "subpackages":[
         {
-            "root": "subPages",
-            "name": "subpackages",
-            "pages": [
-                "demo/index",
-                "goods/detail/index",
-                "slide-delete/index"
-            ]
+            "root": "subPages/demo",
+            "pages": ["index"]
+        },
+        {
+            "root": "subPages/slide-delete",
+            "pages": ["index"]
+        },
+        {
+            "root": "subPages/goods",
+            "pages": ["detail/index"]
         }
     ],
     "window": {

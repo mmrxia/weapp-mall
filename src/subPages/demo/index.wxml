@@ -5,6 +5,12 @@
             <component-quantity bind:change="onQuantityChange"></component-quantity>
         </view>
     </view>
+    <view class="item item-num-roll">
+        <view class="item-title">数值滚动</view>
+        <view class="item-content">
+            <component-num-roll value="9592"></component-num-roll>
+        </view>
+    </view>
     <view class="item item-slide-menu">
         <view class="item-title">侧滑菜单</view>
         <view class="item-content">

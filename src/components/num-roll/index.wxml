@@ -1,0 +1,8 @@
+<view class="num-wrapper">
+    <view class="num-item" wx:for="{{numArr}}" wx:key="index">
+        <view class="content" animation="{{item.animationData}}">
+            <view class="num" wx:for="{{number}}" wx:key="{{index}}" wx:for-item="val">{{val}}</view>
+        </view>
+    </view>
+</view>
+

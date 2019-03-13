@@ -2,6 +2,7 @@
     "navigationBarTitleText": "Demo",
     "usingComponents": {
         "component-quantity": "../../components/quantity/index",
+        "component-num-roll": "../../components/num-roll/index",
         "component-slide-menu": "../../components/slide-menu/index",
         "component-marquee": "../../components/marquee/index"
     }
