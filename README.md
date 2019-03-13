@@ -69,7 +69,7 @@
     - [x] image （图片加载完fadeIn）
     - [x] marquee （跑马灯效果）
     - [ ] sku （商品sku选择）
-    - [ ] num-roll （数值滚动）
+    - [x] num-roll （数值滚动）
 + `@assets`关键字一键替换为`CDN`对应的`https`路径
     ```html
     <!--input-->
