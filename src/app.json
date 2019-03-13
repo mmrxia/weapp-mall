@@ -57,10 +57,5 @@
                 "text": "我的"
             }
         ]
-    },
-    "usingComponents": {
-        "component-modal": "./components/modal/index",
-        "component-dialog": "./components/dialog/index",
-        "component-image": "./components/image/index"
     }
 }

@@ -2,5 +2,8 @@
     "navigationBarBackgroundColor": "#FD3D37",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true,
-    "onReachBottomDistance": 100
+    "onReachBottomDistance": 100,
+    "usingComponents": {
+        "component-image": "../../components/image/index"
+    }
 }
