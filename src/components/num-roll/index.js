@@ -23,7 +23,7 @@ Component({
             reset && this.doAnimation(reset);
 
             setTimeout(() => {
-                this.doAnimation()
+                this.doAnimation();
             }, 200);
         },
         /*
