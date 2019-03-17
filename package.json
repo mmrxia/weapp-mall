@@ -9,7 +9,7 @@
         "eslint-fix": "eslint src --ext .js --fix"
     },
     "pre-commit": [
-        "eslint"
+        "eslint-fix"
     ],
     "repository": {
         "type": "git",

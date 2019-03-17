@@ -14,17 +14,17 @@ Component({
         number: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     },
     ready() {
-        this.initNum();
-
-        setTimeout(() => {
-            this.doAnimation();
-        }, 500)
+        this.init();
     },
     methods: {
-        display(info) {
-            this.setData({
-                ...info
-            })
+        init(reset = false) {
+            this.initNum();
+
+            reset && this.doAnimation(reset);
+
+            setTimeout(() => {
+                this.doAnimation()
+            }, 200);
         },
         /*
         * 初始化数据
@@ -39,16 +39,16 @@ Component({
         /*
         * 滚动动画
         * */
-        doAnimation() {
+        doAnimation(reset) {
             const animation = wx.createAnimation({
-                duration: 1800,
+                duration: reset ? 0 : 1800,
                 timingFunction: 'ease',
             });
 
             const {numArr} = this.data;
             numArr.forEach(v => {
                 if (v) {
-                    v.animationData = animation.translateY(`-${v.num}0%`).step().export();
+                    v.animationData = animation.translateY(reset ? 0 : `-${v.num}0%`).step().export();
                 }
             });
 
