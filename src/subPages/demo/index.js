@@ -14,10 +14,19 @@ Page({
                 id: 456,
                 title: '测试侧滑菜单组件456'
             }]
+        },
+        numRoll: {
+            value: 9593
         }
     },
     onLoad() {
 
+    },
+    onPullDownRefresh(){
+        this.setData({
+            'numRoll.value': 23456
+        });
+        this.selectComponent('#num-roll').init();
     },
     /*
     * 数量变化

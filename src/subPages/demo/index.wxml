@@ -8,7 +8,7 @@
     <view class="item item-num-roll">
         <view class="item-title">数值滚动</view>
         <view class="item-content">
-            <component-num-roll value="9592"></component-num-roll>
+            <component-num-roll id="num-roll" value="{{numRoll.value}}"></component-num-roll>
         </view>
     </view>
     <view class="item item-slide-menu">
