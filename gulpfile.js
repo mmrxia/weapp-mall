@@ -137,8 +137,7 @@ gulp.task('clean', removeFiles);  // 删除任务
 gulp.task('FTP', uploadFTP);    // 上传FTP
 
 //默认任务
-gulp.task('default', gulp.series(
-    removeFiles,
+gulp.task('dev', gulp.series(
     copyFiles,
     gulp.parallel(
         compileCSS,
