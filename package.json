@@ -30,7 +30,6 @@
         "gulp-plumber": "^1.2.1",
         "gulp-rename": "^1.4.0",
         "gulp-replace": "^0.5.4",
-        "gulp-sass": "^4.0.2",
         "gulp-sftp": "^0.1.5",
         "gulp-util": "^3.0.8",
         "pre-commit": "^1.2.2"
