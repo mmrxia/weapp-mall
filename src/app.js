@@ -1,22 +1,24 @@
-//app.js
-import ext from 'utils/ext';
-import utils from  'utils/index';
+// 全局的工具类方法
+import utils from './utils/index';
+import interceptor from './utils/interceptor';
 
-//app.js
+/**
+ * 需要用到 async/await 的页面引出以下内容即可
+ * const { regeneratorRuntime } = global
+ * */
+Object.assign(global, {
+    regeneratorRuntime: require('./libs/regenerator-runtime'),
+    _config: require('./config/index'),
+    _track: null
+});
+const { regeneratorRuntime } = global;
+
+// 拦截器
+interceptor.init();
+
 App({
-    ...ext,
     ...utils,
     onLaunch () {
-        try {
-            const {model, system} = wx.getSystemInfoSync();
-            this.globalData.os = /ios/gi.test(system) ? 'ios' : 'android';
-            this.globalData.isIphoneX = new RegExp('iPhone X', 'gi').test(model);
-        } catch (e) {
-            console.log(e);
-        }
-    },
-    globalData: {
-        os: 'ios',
-        isIphoneX: false,
+
     }
 });

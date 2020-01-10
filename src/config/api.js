@@ -1,5 +1,0 @@
-//api list
-
-export default {
-
-};

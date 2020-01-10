@@ -1,5 +1,4 @@
-import regeneratorRuntime from '../../libs/regenerator-runtime';
-import cfg from '../../config/index';
+const { regeneratorRuntime, _config } = global;
 const app = getApp();
 Page({
     data: {
@@ -10,7 +9,7 @@ Page({
     },
     handlePhoneCall() {
         wx.makePhoneCall({
-            phoneNumber: cfg.kf_phone
+            phoneNumber: _config.kf_phone
         });
     },
 

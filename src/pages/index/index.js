@@ -1,5 +1,4 @@
-import regeneratorRuntime from '../../libs/regenerator-runtime';
-import cfg from '../../config/index';
+const { regeneratorRuntime } = global;
 
 const app = getApp();
 Page({

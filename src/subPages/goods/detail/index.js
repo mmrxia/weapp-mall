@@ -1,4 +1,4 @@
-import regeneratorRuntime from '../../../libs/regenerator-runtime';
+const { regeneratorRuntime } = global;
 
 const app = getApp();
 Page({

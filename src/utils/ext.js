@@ -1,4 +1,4 @@
-import regeneratorRuntime from '../libs/regenerator-runtime';
+const { regeneratorRuntime } = global;
 /*
  * 将浮点数去除小数点，返回整数和倍数。如 3.14 >> 314，倍数是 100
  * @param n {number} 浮点数
@@ -140,21 +140,4 @@ Date.prototype.format = function (b) {
     }
     return b;
 };
-
-/**防止页面快速点击可以重复触发调用方法 app.preventMoreTap()
- * let app = getApp();
- * Page({
- *   xxx: function (e) {
- *       if (app.multiTap(e))  return;
- *      }
- *   })
- */
-const multiTap = function (e) {
-    let lastTime = this.globalLastTapTime || 0;
-    let result = e.timeStamp - lastTime < 500;
-    this.globalLastTapTime = e.timeStamp;
-    return result;
-};
-
-export default {multiTap};
 
