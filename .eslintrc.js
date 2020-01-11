@@ -20,10 +20,10 @@ module.exports = {
         'no-unused-vars': 'off'
 	},
 	globals: {
-		getApp: false,
-		Page: false,
-		wx: false,
 		App: false,
+        Page: false,
+        wx: false,
+        getApp: false,
 		getCurrentPages: false,
 		Component: false
 	}
