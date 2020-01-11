@@ -6,7 +6,7 @@ import Map from '../libs/amap-wx.js';
 import cfg from '../config/index.js';
 
 const __map = new Map.AMapWX({
-    key: cfg.amap_key     //高德地图key
+    key: 'a8a06158a8034e1e4da698bfa6827b55'     //高德地图key
 });
 
 export default {
