@@ -5,7 +5,7 @@
     </view>
 </view>
 <scroll-view class="navbar"  scroll-x scroll-with-animation scroll-left="{{scrollLeft}}">
-    <view class="item {{currIndex === index ? 'active' : ''}}" wx:for="{{navItem}}" id="{{item.id}}" bindtap="changeNav" data-index="{{index}}">
+    <view class="item {{currIndex === index ? 'active' : ''}}" wx:for="{{navItem}}" wx:key="{{index}}" id="{{item.id}}" bindtap="changeNav" data-index="{{index}}">
         <view class="item-txt">{{item.name}}</view>
     </view>
 </scroll-view>
