@@ -21,16 +21,16 @@
     ],
     "window": {
         "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "white",
+        "navigationBarBackgroundColor": "#ffffff",
         "navigationBarTitleText": "小程序商城",
         "navigationBarTextStyle": "black",
-        "backgroundColor": "white"
+        "backgroundColor": "#ffffff"
     },
     "tabBar": {
-        "color": "#777",
+        "color": "#777777",
         "selectedColor": "#BA0000",
         "borderStyle": "black",
-        "backgroundColor": "#fff",
+        "backgroundColor": "#ffffff",
         "list": [
             {
                 "pagePath": "pages/index/index",

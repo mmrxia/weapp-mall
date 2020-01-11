@@ -10,7 +10,6 @@ await app.$http({
 })
 * */
 import config from '../config/index'; // 全局配置
-const { appName, platform } = config;
 
 const http = options => new Promise((resolve, reject) => {
     // 全局loading
@@ -19,19 +18,16 @@ const http = options => new Promise((resolve, reject) => {
             mask: true
         });
     }
+    console.info(`【发送请求：】${new Date().toLocaleString()}【 API=${options.url} 】${JSON.stringify(options.data)}`);
 
-    options.data = Object.assign(options.data || {}, {
-        appName: options.data ? options.data.appName || appName : appName,
-        platform: options.data ? options.data.platform || platform : platform
-    });
-    console.info('options.data => ', options.data);
     wx.request({
         url: /^http/i.test(options.url) ? options.url : config.baseUrl + options.url,
         method: options.method || 'POST',
         header: Object.assign({}, options.header || {}),
         data: options.data,
         success(response) {
-            console.info('request success => ', options.url, response.data);
+            console.info(`【接口响应：】${new Date().toLocaleString()}【 API=${options.url} 】`, response);
+
             const res = response.data;
             const code = res.code;
             if (response.statusCode === 200) {
@@ -66,9 +62,9 @@ const http = options => new Promise((resolve, reject) => {
                 return reject(res);
             }
         },
-        fail(err) {
-            console.info('request fail => ', err);
-            reject(err);
+        fail(res) {
+            console.info(`【响应失败：】${new Date().toLocaleString()}【 API=${options.url} 】`, res);
+            reject(res);
         },
         complete() {
             // 隐藏全局loading

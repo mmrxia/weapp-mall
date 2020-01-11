@@ -5,16 +5,16 @@ Page({
         userInfo: {},
     },
     onLoad() {
-        //app.login()
+        //app.$login()
     },
     handlePhoneCall() {
         wx.makePhoneCall({
-            phoneNumber: _config.kf_phone
+            phoneNumber: '400-1001-1002'
         });
     },
 
     navigateTo(e) {
-        app.login({
+        app.$login({
             go: e.currentTarget.dataset.url
         });
     },

@@ -8,7 +8,7 @@ import $filters from './x-filters'; // 过滤器
 import { $report } from './report'; // 日志上报
 /*
  * 静默授权登录，获取用户信息
- * app.login().then(res=>{})
+ * app.$login().then(res=>{})
  * */
 const $login = async() => {
     // 获取本地存储的用户信息

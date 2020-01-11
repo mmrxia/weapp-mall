@@ -1,4 +1,6 @@
 // 全局的工具类方法
+import regeneratorRuntime from './libs/regenerator-runtime';
+import _config from './config/index';
 import utils from './utils/index';
 import interceptor from './utils/interceptor';
 
@@ -7,11 +9,10 @@ import interceptor from './utils/interceptor';
  * const { regeneratorRuntime } = global
  * */
 Object.assign(global, {
-    regeneratorRuntime: require('./libs/regenerator-runtime'),
-    _config: require('./config/index'),
+    regeneratorRuntime,
+    _config,
     _track: null
 });
-const { regeneratorRuntime } = global;
 
 // 拦截器
 interceptor.init();
