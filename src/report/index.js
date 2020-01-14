@@ -59,8 +59,7 @@ export const $report = async(event, options = {}) => {
     // 上报数据
     if (event === reportConfig.opportunity) {
         global._track = null; // 清除已有记录
-const openid='12344455'
-        //const { openid } = await utils.$login();
+        const { openid } = await utils.$login();
         if (openid) {
             const { _launchInfo } = global;
             Object.assign(_track, {
