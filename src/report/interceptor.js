@@ -1,11 +1,11 @@
-import utils from 'index';
+import { $report } from './index'; // 日志上报
 
 export default {
     init() {
-    /* global App */
+        /* global App */
         const oldApp = App;
         // eslint-disable-next-line
-    App = function (Obj) {
+        App = function (Obj) {
             interceptor(Obj, 'onLaunch');
             interceptor(Obj, 'onPageNotFound');
             interceptor(Obj, 'onError');
@@ -15,11 +15,10 @@ export default {
         /* global Page */
         const oldPage = Page;
         // eslint-disable-next-line
-    Page = function (Obj) {
+        Page = function (Obj) {
             interceptor(Obj, 'onLoad');
             interceptor(Obj, 'onShow');
             interceptor(Obj, 'onHide');
-            interceptor(Obj, 'onUnload');
             interceptor(Obj, 'onReachBottom');
             interceptor(Obj, 'onShareAppMessage');
             oldPage(Obj);
@@ -32,10 +31,10 @@ export default {
 * */
 function interceptor(Obj, event) {
     const e = Obj[event];
-    Obj[event] = function(option) {
-    // 原始方法调用
-        e && e.call(this, option);
+    Obj[event] = function (option) {
         // 自定义code
-        utils.$report(event, option); // 日志上报
+        $report(event, option); // 日志上报
+        // 原始方法调用
+        e && e.call(this, option);
     };
 }

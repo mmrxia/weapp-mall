@@ -1,8 +1,9 @@
 const { regeneratorRuntime } = global;
-import utils from 'index';
-import { complete } from './promisify';
+import utils from '../utils/index';
+import { complete } from '../utils/promisify';
 import config from '../config/index';
-import $http from './x-http';
+import $http from '../utils/x-http';
+import reportConfig from './config';
 
 /*
 * 日志上报
@@ -10,11 +11,11 @@ import $http from './x-http';
 * Page:onLoad 记录页面路径和参数
 * Page:onHide 页面关闭时上报到服务器
 * */
-const allowPath = ['subPages/goods/detail/index'];
+
 export const $report = async(event, options = {}) => {
     const page = getCurrPage();
     const path = page && page.route || '';
-    if (path && !allowPath.includes(path)) {
+    if (path && !reportConfig.allowPath.includes(path)) {
         return false; // 投放页才上报
     }
 
@@ -55,11 +56,11 @@ export const $report = async(event, options = {}) => {
         });
     }
 
-    // 关闭时上报数据
-    if (event === 'onUnload') {
+    // 上报数据
+    if (event === reportConfig.opportunity) {
         global._track = null; // 清除已有记录
-
-        const { openid } = await utils.$login();
+const openid='12344455'
+        //const { openid } = await utils.$login();
         if (openid) {
             const { _launchInfo } = global;
             Object.assign(_track, {
@@ -67,7 +68,7 @@ export const $report = async(event, options = {}) => {
                 ..._launchInfo
             });
             $http({
-                url: '/api/v1/track/report',
+                url: reportConfig.api,
                 errType: 'none',
                 data: {
                     _track
