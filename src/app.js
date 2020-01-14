@@ -2,7 +2,11 @@
 import regeneratorRuntime from './libs/regenerator-runtime';
 import _config from './config/index';
 import utils from './utils/index';
-import interceptor from './utils/interceptor';
+
+// 拦截器
+import { $report } from './report/index'; // 日志上报
+import interceptor from './report/interceptor';
+interceptor.init();
 
 /**
  * 需要用到 async/await 的页面引出以下内容即可
@@ -14,10 +18,9 @@ Object.assign(global, {
     _track: null
 });
 
-// 拦截器
-interceptor.init();
 
 App({
+    $report,
     ...utils,
     onLaunch () {
 

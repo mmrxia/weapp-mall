@@ -5,7 +5,6 @@ const { regeneratorRuntime } = global;
 import { promisify, complete } from 'promisify';
 import $http from './x-http'; // 二次封装 wx.request
 import $filters from './x-filters'; // 过滤器
-import { $report } from './report'; // 日志上报
 /*
  * 静默授权登录，获取用户信息
  * app.$login().then(res=>{})
@@ -72,6 +71,5 @@ export default {
     $http,
     $filters,
     $login,
-    $authorize,
-    $report
+    $authorize
 };
