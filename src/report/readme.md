@@ -1,4 +1,4 @@
-####自定义日志埋点上报
+#### 自定义日志埋点上报
 
 思路：
 1. 拦截小程序App和Page的生命周期函数
@@ -42,7 +42,7 @@ let trackSchema = new Schema({
 
 module.exports = mongoose.model('track', trackSchema);
 ```
->> ps: 关于用户ip的获取，可由服务端获取。
+> ps: 关于用户ip的获取，可由服务端获取。
 如果我们使用了Nginx做了反向代理，曾需要在nginx配置文件中加上真实请求的来源；
 ```
 location / {
@@ -54,7 +54,7 @@ location / {
 如果后台服务使用了nodejs的KOA框架，则只需设置`app.proxy = true;`,
 然后通过`ctx.request.id`即可获取到真实ip;
 
-3. 前端上报日志接口数据格式
+4. 前端上报日志接口数据格式
 ```json
 {
     "project": "weapp-mall",
@@ -102,7 +102,7 @@ location / {
 }
 ```
 
-使用方式：
+#### 使用方式：
 1. 入口文件注入拦截器
 ```javascript
 import interceptor from './report/interceptor';
@@ -129,4 +129,17 @@ App({
     $report,
     onLaunch () {}
 });
+```
+
+4. 在需要自定义上报的位置调用即可
+```javascript
+// 示例
+Page({
+    onHide(options){
+        app.$report('onHide', options);
+    },
+    submitOrder(info){
+        app.$report('submitOrder', info);
+    }
+})
 ```
