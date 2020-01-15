@@ -124,7 +124,7 @@ Object.assign(global, {
 
 3. 注入全局方法$report到App上
 ```javascript
-import { $report } from './report/index'; // 日志上报
+import $report from './report/index'; // 日志上报
 App({
     $report,
     onLaunch () {}
@@ -142,4 +142,71 @@ Page({
         app.$report('submitOrder', info);
     }
 })
+```
+
+#### 多端框架中如何使用
+多数多端框架，如uni-app，基于Vue对App和Page重新进行了封装，Page对象无法注入，可使用mixins的方式进行拦截。
+
+> 详细原因可参考npm包源码：@dcloudio/uni-mp-weixin
+
+1. 在report目录下新建mixins.js文件，内容如下：
+
+```javascript
+/*
+* Page对象混入
+* 拦截生命周期函数等
+* */
+import $report from './index'; // 日志上报
+export default {
+  onLoad(options) {
+    $report('onLoad', options);
+  },
+  onShow(options) {
+    $report('onShow', options);
+  },
+  onReachBottom(options) {
+    $report('onReachBottom', options);
+  },
+  onShareAppMessage(options) {
+    $report('onShareAppMessage', options);
+  }
+};
+
+```
+
+2. 在入口文件main.js中初始化。
+```javascript
+import Vue from 'vue';
+import _App from './App';
+
+// 日志上报拦截器
+import $report from './report/index';
+import report_mixins from '@/report/mixins';
+import interceptor from './report/interceptor';
+interceptor.init();
+Vue.prototype.$report = $report;
+
+const app = new Vue({
+  mixins: [report_mixins],
+  ..._App
+});
+app.$mount();
+```
+
+3. 在业务代码中自定义调用即可。
+```javascript
+export default {
+    name: 'Detail',
+    data() {
+      return {}
+    },
+    onHide(options){
+        this.$report('onHide', options);
+    },
+    methods: {
+        submitOrder(info){
+            this.$report('submitOrder', info);
+        }
+    }
+  };
 ```
