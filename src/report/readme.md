@@ -165,10 +165,10 @@ export default {
     $report('onShow', options);
   },
   onHide(options) {
-      const { beforeHide } = this.$options;
-      beforeHide && beforeHide.call(this, options);
-      $report('onHide', options);
-    },
+    const { beforeHide } = this.$options;
+    beforeHide && beforeHide.call(this, options);
+    $report('onHide', options);
+  },
   onReachBottom(options) {
     $report('onReachBottom', options);
   },
@@ -176,7 +176,6 @@ export default {
     $report('onShareAppMessage', options);
   }
 };
-
 ```
 
 2. 在入口文件main.js中初始化，增加全局方法`this.$report`。
