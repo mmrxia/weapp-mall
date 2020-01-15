@@ -164,6 +164,11 @@ export default {
   onShow(options) {
     $report('onShow', options);
   },
+  onHide(options) {
+    const { beforeHide } = this.$options;
+    beforeHide && beforeHide();
+    $report('onHide', options);
+  },
   onReachBottom(options) {
     $report('onReachBottom', options);
   },
@@ -174,28 +179,28 @@ export default {
 
 ```
 
-2. 在入口文件main.js中初始化。
+2. 在入口文件main.js中初始化，增加全局方法`this.$report`。
 ```javascript
 import Vue from 'vue';
 import _App from './App';
 
 // 日志上报拦截器
 import $report from './report/index';
-import report_mixins from '@/report/mixins';
 import interceptor from './report/interceptor';
 interceptor.init();
 Vue.prototype.$report = $report;
 
 const app = new Vue({
-  mixins: [report_mixins],
   ..._App
 });
 app.$mount();
 ```
 
-3. 在业务代码中自定义调用即可。
+3. 在业务代码中混入后，自定义调用即可。
 ```javascript
+import report_mixins from '@/report/mixins';
 export default {
+    mixins: [report_mixins],
     name: 'Detail',
     data() {
       return {}
