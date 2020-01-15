@@ -1,4 +1,4 @@
-import { $report } from './index'; // 日志上报
+import $report from './index'; // 日志上报
 
 export default {
     init() {

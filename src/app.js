@@ -4,7 +4,7 @@ import _config from './config/index';
 import utils from './utils/index';
 
 // 拦截器
-import { $report } from './report/index'; // 日志上报
+import $report from './report/index'; // 日志上报
 import interceptor from './report/interceptor';
 interceptor.init();
 
