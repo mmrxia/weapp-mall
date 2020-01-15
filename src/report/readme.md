@@ -165,10 +165,10 @@ export default {
     $report('onShow', options);
   },
   onHide(options) {
-    const { beforeHide } = this.$options;
-    beforeHide && beforeHide();
-    $report('onHide', options);
-  },
+      const { beforeHide } = this.$options;
+      beforeHide && beforeHide.call(this, options);
+      $report('onHide', options);
+    },
   onReachBottom(options) {
     $report('onReachBottom', options);
   },
