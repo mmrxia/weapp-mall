@@ -32,7 +32,6 @@ let trackSchema = new Schema({
     'ip': String, // 用户ip
     'openid': {type: String, index: true}, // 用户openid
     'path': {type: String, index: true}, // 小程序路径
-    'id': {type: String, index: true}, // 页面参数: ID
     'scene': Number, // 场景值
     'project': String, // 小程序项目名,
     'networkType': String, // 网络类型
@@ -204,8 +203,16 @@ export default {
     data() {
       return {}
     },
-    onHide(options){
-        this.$report('onHide', options);
+    beforeHide(){
+      if (this.scrolled) {
+        this.$report('page_scrolled');
+      }
+    },
+    onShow() {
+      this.scrolled = false;  //重置滚动标识
+    },
+    onPageScroll() {
+      this.scrolled = true;  //滚动过
     },
     methods: {
         submitOrder(info){

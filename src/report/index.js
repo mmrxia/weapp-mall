@@ -51,8 +51,7 @@ export default async (event, options = {}) => {
     // 页面onLoad时，记录页面参数
     if (event === 'onLoad') {
         Object.assign(_track, {
-            path, // 页面路径
-            pageId: options.id || '' // 页面ID
+            path // 页面路径
         });
     }
 
