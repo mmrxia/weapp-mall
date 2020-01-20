@@ -29,11 +29,12 @@ let logSchema = new Schema({
 
 // 整体结构
 let trackSchema = new Schema({
+    'version': String, // 版本标识
     'ip': String, // 用户ip
     'openid': {type: String, index: true}, // 用户openid
     'path': {type: String, index: true}, // 小程序路径
     'scene': Number, // 场景值
-    'project': String, // 小程序项目名,
+    'project': String, // 小程序项目名
     'networkType': String, // 网络类型
     'systemInfo': systemInfoSchema, // 系统信息
     'logs': [logSchema] // 埋点信息
@@ -85,6 +86,7 @@ location / {
         }
     ],
     "path": "subPages/goods/detail/index",
+    "version": "1.0",
     "openid": "12344455",
     "scene": 1001,
     "networkType": "wifi",

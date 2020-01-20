@@ -63,6 +63,7 @@ export default async (event, options = {}) => {
         if (openid) {
             const {_launchInfo} = global;
             Object.assign(_track, {
+                version: reportConfig.version,
                 openid,
                 ..._launchInfo
             });
