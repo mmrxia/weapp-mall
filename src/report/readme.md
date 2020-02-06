@@ -32,7 +32,7 @@ let trackSchema = new Schema({
     'version': String, // 版本标识
     'ip': String, // 用户ip
     'openid': {type: String, index: true}, // 用户openid
-    'path': {type: String, index: true}, // 小程序路径
+    'route': {type: String, index: true}, // 小程序路径
     'scene': Number, // 场景值
     'project': String, // 小程序项目名
     'networkType': String, // 网络类型
@@ -85,7 +85,7 @@ location / {
             "timestamp": 1579015071535
         }
     ],
-    "path": "subPages/goods/detail/index",
+    "route": "subPages/goods/detail/index",
     "version": "1.0",
     "openid": "12344455",
     "scene": 1001,

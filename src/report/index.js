@@ -48,15 +48,15 @@ export default async (event, options = {}) => {
         };
     }
 
-    // 页面onLoad时，记录页面参数
-    if (event === 'onLoad') {
-        Object.assign(_track, {
-            path // 页面路径
-        });
-    }
-
     // 上报数据
     if (event === reportConfig.opportunity) {
+        // 其他参数
+        const { route, options: query } = getCurrPage();
+        Object.assign(_track, {
+            route, // 页面路径
+            query // 页面参数
+        });
+
         console.log('【待上报日志数据】', _track);
         global._track = null; // 清除已有记录
         const {openid} = await utils.$login();
